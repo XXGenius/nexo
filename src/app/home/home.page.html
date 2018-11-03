@@ -1,12 +1,756 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-grid class="header" style="border-bottom: 1px solid #DFDFDF;padding: 0;">
+        <ion-row>
+            <ion-col align-self-center>
+                <img class="logo" src="./assets/img/logo.png" alt="">
+            </ion-col>
+            <ion-col class="header__lang" align-self-center col-2>
+                <p class="header__lang-item active">EN</p>
+                <p class="header__lang-item">AR</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-header>
+<ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
+    <ion-grid class="navbar">
+        <ion-row>
+            <ion-col class="navbar__item">
+                <div class="active">Home</div>
+            </ion-col>
+            <ion-col class="navbar__item">
+                <div style="text-align: left;padding-left: 3.5vw;">Heritage</div>
+            </ion-col>
+            <ion-col class="navbar__item" style="text-align: left">
+                <div>Specification</div>
+            </ion-col>
+            <ion-col class="navbar__item" style="text-align: left">
+                <div>Exterior&Interior</div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div class="main">
+        <div class="block-text">NEXO</div>
+        <div class="blok2"></div>
+        <div class="blok3"></div>
+        <div class="blok1"></div>
+    </div>
+    <div class="white">
+        <div class="second">
+            <div class="arrow">
+                <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
+            </div>
+            <div class="second__item">
+                <div class="second__title">
+                    Driving to a cleaner future
+                </div>
+                <div class="center">
+                    <div class="second__description">
+                        The All-New NEXO is a truly one-of-a-kind hydrogen fuel cell SUV that
+                        combines cutting-edge technology
+                        and futuristic design with fantastic driving range.
+                    </div>
+                </div>
+                <ion-grid class="second__block">
+                    <ion-row>
+                        <ion-col>
+                            <div>
+                                <img class="second__front-car" src="./assets/img/block_2/front.png" alt="">
+                                <img class="plus-left" src="./assets/img/block_2/plus.png" alt="">
+                            </div>
+                        </ion-col>
+                        <ion-col class="second__text">
+                            <div class="second__text-title">Inspired by nature</div>
+                            <div class="second__line"></div>
+                            <div class="second__text-text">
+                                With its clean aerodynamic lines,
+                                the All-New NEXO has been sculpted to stand out with a streamlined look that flows
+                                elegantly like water – its only emission.
+                            </div>
+                        </ion-col>
+                        <ion-col style="text-align: right;">
+                            <img class="second__back-car" src="./assets/img/block_2/back.png">
+                            <img (click)="showRight()" class="plus" src="./assets/img/block_2/plus.png">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <div [@carLeft]="carleft" class="second__left-car">
+                    <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 3.5vw;left: 1.6vw;"
+                         src="./assets/img/block_2/Close.png">
+                    <div>
+                        <div class="car__title">Sleekly sculpted</div>
+                        <div class="car__text">The All-New NEXO’s sleek
+                            window line and floating roof
+                            design add to the streamlined
+                            look – expressive from
+                            every angle.
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="false" class="second__right-car">
+                    <img src="./assets/img/block_2/Close.png" alt="">
+                    <div>
+                        <div class="car__title">Pure form</div>
+                        <div class="car__text">NEXO’s clean, progressive design
+                            combines the very best of
+                            aerodynamics, technology, and SUV
+                            style into one impressively pure form.
+                        </div>
+                    </div>
+                </div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box arrow">
+            <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+        </div>
+        <div class="delimeter"></div>
+        <div class="heritage">
+            <div class="heritage__title">
+                Heritage
+            </div>
+            <div class="center">
+                <div class="heritage__text">
+                    The All-New NEXO not only embodies Hyundai’s commitment to advanced eco-friendly vehicle development
+                    –
+                    it also reinforces the company’s leadership
+                    in fuel cell electric vehicles (FCEV). Hyundai is a pioneer in fuel cell technology, beginning R&D
+                    for
+                    it in 1998. And in 2013, we pioneered the
+                    commercialisation of hydrogen fuel cell vehicles, bringing the ix35 Fuel Cell
+                    to market. Hyundai became
+                    the world's first carmaker with
+                    a mass production hydrogen fuel cell vehicle – an unprecedented
+                    endeavour in the automotive industry.
+                </div>
+            </div>
+
+        </div>
+        <ion-grid style="padding-top: 5.5vw;padding-bottom: 1.1vw;">
+            <ion-row>
+                <ion-col align-self-center>
+                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/first.png" alt=""></div>
+                </ion-col>
+                <ion-col align-self-center>
+                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/second.png" alt=""></div>
+                </ion-col>
+                <ion-col align-self-center>
+                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/third.png" alt=""></div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtitle">World’s 1st mass
+                            production FCEV vehicle
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtitle">Most fuel cell <br>
+                            vehicles sold
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtitle">Sustained commitment
+                            to the environment
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtext"> In 2013, the ix35 Fuel Cell became
+                            the world’s first mass-produced
+                            hydrogen-powered vehicle.
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtext"> As of 2017, 500 Hyundai fuel cell vehicles have been registered
+                            in
+                            Europe. That is more than
+                            all
+                            other brands combined. Hyundai sells them in 18 countries around the world, 13 of which are
+                            in
+                            Europe.
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="container-sub">
+                        <div class="heritage__subtext">Hyundai Motor Company has been dedicated to the development of
+                            Fuel
+                            Cell Vehicles since 1998.
+                            We
+                            are committed to fully playing our role as the global brand leader in eco-friendly
+                            technology.
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div class="car-third">
+        </div>
+    </div>
+
+    <div class="car-four container">
+        <div class="arrow">
+            <img class="arrow__img" src="./assets/img/arrow.png">
+        </div>
+        <div class="slide-car">
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <div class="delimeter-year-top"></div>
+                    <div class="slide-car__year">1998</div>
+                    <div class="slide-car__title">Launch of fuel cell development</div>
+                    <div class="slide-car__description bottom">
+                        Hyundai Motor has been at the forefront of hydrogen vehicle development for over two decades
+                        now.
+                        The company launched R&D
+                        for fuel cell technology <br>
+                        in 1998.
+                    </div>
+                    <img style="padding-top: 1vw" src="./assets/img/block_4/1.png">
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <img class="top-image" src="./assets/img/block_4/2.png">
+                    <div class="slide-car__year  top">2002</div>
+                    <div class="delimeter-year-bottom"></div>
+                    <div class="slide-car__title">75kW Santa Fe FCEV</div>
+                    <div class="slide-car__description">
+                        <ul style="padding: 0 0 0 2vw;margin: 0;">
+                            <li>Base model: Santa Fe SM</li>
+                            <li> Operating range: 230 km</li>
+                            <li> Fuel cell power output: 75 kW</li>
+                            <li> Note: Inclusion of battery pack for
+                                improved range and efficiency.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top bottom-image">
+                    <div class="delimeter-year-top"></div>
+                    <div class="slide-car__year">2004</div>
+                    <div class="slide-car__title">80kW Tucson FCEV</div>
+                    <div class="slide-car__description bottom">US DOE FCEV demonstration
+                        [2004-2009]
+
+                        Hyundai also participated in the
+                        North America FCEV demonstration
+                        program led by the U.S. Department
+                        of
+                        Energy between 2004 and 2009.
+                    </div>
+                    <img src="./assets/img/block_4/3.png">
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <img class="top-image" src="./assets/img/block_4/4.png">
+                    <div class="slide-car__year top">2006</div>
+                    <div class="delimeter-year-bottom"></div>
+                    <div class="slide-car__title">1st Generation fuel cell bus</div>
+                    <div class="slide-car__description ">Hyundai has been operating an
+                        FCEV demonstration program in
+                        collaboration with the Korean
+                        government since 2006.
+                        <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <li> Bus operating range: 380 km</li>
+                            <li> Fuel cell power output: 160 kW</li>
+                            <li>Note: Operated in Germany during
+                                the World Cup
+                                2006.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top bottom-image">
+                    <div class="delimeter-year-top"></div>
+                    <div class="slide-car__year">2007</div>
+                    <div class="slide-car__title">100kW Tucson FCEV</div>
+                    <div class="slide-car__description bottom">
+                        Further development of FCEV
+                        powertrain.
+                        <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <li>Operating range: 370 km</li>
+                            <li> Fuel cell power output: 100 kW</li>
+                            <li>Note: Equipped with Hyundai's
+                                in-house developed
+                                electric drivetrain.
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./assets/img/block_4/5.png">
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <img class="top-image" src="./assets/img/block_4/6.png">
+                    <div class="slide-car__year top">2009</div>
+                    <div class="delimeter-year-bottom"></div>
+                    <div class="slide-car__title">2nd Generation fuel cell bus</div>
+                    <div class="slide-car__description ">
+                        The FCEV demonstration program was
+                        launched in 2009 in Korea, in Seoul
+                        and Ulsan and was successfully
+                        completed in 2013.
+                        <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <li> Operating range: 380 km</li>
+                            <li>Fuel cell power output: 200 kW</li>
+                            <li>
+                                Note: Operated in Korea during the
+                                Yeosu Expo 2012.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top bottom-image">
+                    <div class="delimeter-year-top"></div>
+                    <div class="slide-car__year">2013</div>
+                    <div class="slide-car__title">100kw ix35 FCEV</div>
+                    <div class="slide-car__description bottom">
+                        World’s 1st Mass- produced FCEV.
+                        <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <li>Operating range: 594 km (NEDC)</li>
+                            <li>
+                                Fuel cell power output: 100 kW.
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./assets/img/block_4/7.png">
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <img class="top-image" src="./assets/img/block_4/8.png">
+                    <div class="slide-car__year top">2015</div>
+                    <div class="delimeter-year-bottom"></div>
+                    <div class="slide-car__title">Intrado fuel cell concept</div>
+                    <div class="slide-car__description ">
+                        The Hyundai Intrado concept car
+                        premiered at the 2014 Geneva
+                        Motor Show. The SUV/crossover has
+                        a
+                        carbon-fibre central structure and
+                        utilises a Li-ion 36 kW battery.
+                        <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <li>Operating range: 600 km.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <div class="delimeter-year-top"></div>
+                    <div class="slide-car__year">2017</div>
+                    <div class="slide-car__title">The FE Concept</div>
+                    <div class="slide-car__description bottom">
+                        The FE Concept showcases Hyundai
+                        Motor’s 4th generation hydrogen fuel
+                        cell technology, an evolution of
+                        research, development and real-world
+                        evaluation programs around the world.
+                        Supports the Icelandic
+                        H2ME Initiative.
+                    </div>
+                    <img style="padding-top:4vw;" src="./assets/img/block_4/9.png">
+                </div>
+            </div>
+            <div class="slide-car__item-top">
+                <div class="slide-car__item-top">
+                    <img class="top-image" src="./assets/img/block_4/10.png">
+                    <div class="slide-car__year top">2018</div>
+                    <div class="delimeter-year-bottom"></div>
+                    <div class="slide-car__title">Launch of 2nd-gen FCEV, NEXO</div>
+                    <div class="slide-car__description ">
+                        The NEXO Fuel Cell SUV delivers the
+                        world’s best fuel cell efficiency and
+                        a driving range of 666 km (WLTP).
+                        Its dedicated vehicle architecture
+                        delivers improved power-to-weight
+                        ratio, faster acceleration and cabin
+                        space.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container table">
+        <div class="arrow" style="    padding-bottom: 0;">
+            <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+        </div>
+        <div class="delimeter container"></div>
+        <div class="specification">
+            <div class="specification__title">
+                Specification
+            </div>
+        </div>
+        <ion-grid style="padding-bottom: 50px;">
+            <ion-row>
+                <ion-col class="text__select" align-self-center>Choose a trim</ion-col>
+                <ion-col size="6" align-self-center style="    border: 0.1vw solid;
+    padding: 0;
+    height: 4vw;">
+                    <div style="display: inline-block;
+    font-size: 1.6vw;
+    padding-left: 1vw;
+    padding-top: 1vw;">{{currentInch.title}}
+                    </div>
+                    <div (click)="show()" style="
+    display: inline-block;
+    float: right;
+    background: #DFDFDF;
+    width: 5vw;
+    height: 3.7vw;
+    padding-left: 1.5vw;
+    padding-top: 1vw;
+    border-left: 1px solid;
+    border-right: 1px solid;"><img src="./assets/img/arrows.png" alt=""></div>
+                    <div class="option-list" [style.display]="select?'block':'none'">
+                        <div class="option" data-select-val="0" (click)="selectInch17()">FCEV powertrain (17-inch
+                            wheels)
+                        </div>
+                        <div class="option" data-select-val="1" (click)="selectInch19()">FCEV powertrain (19-inch
+                            wheels)
+                        </div>
+                    </div>
+                </ion-col>
+                <ion-col class="text__select" style="font-family: Hyndai-Regular" align-self-center>
+                    <div style="height: 2.5vw;
+    background: black;
+    display: inline-block;
+    width: 3vw;"><img style="width: 50%" src="./assets/img/vector.png" alt="">
+                    </div>
+                    <div style="    display: inline-block;
+    padding-left: 2vw;
+    font-size: 1.5vw;" (click)="expendAll()">Expand all
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <div class="spec_overview center">
+            <div class="spec_table" style="height: auto;">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th class="type" rowspan="7">Overview</th>
+                        <th>Category</th>
+                        <td>Eco</td>
+                    </tr>
+                    <tr>
+                        <th>Model Name</th>
+                        <td>Nexo</td>
+                    </tr>
+                    <tr>
+                        <th>Region</th>
+                        <td>EUROPE (K4)</td>
+                    </tr>
+                    <tr>
+                        <th>Body Type</th>
+                        <td>5 Door</td>
+                    </tr>
+                    <tr>
+                        <th>LHD/RHD</th>
+                        <td>LHD</td>
+                    </tr>
+                    <tr>
+                        <th>Seats</th>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th>Model Year</th>
+                        <td>2018</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="center">
+            <div class="performance_title" (click)="showPerfomace()">
+                <a [ngClass]="{'on': perfomance}">Performance</a>
+            </div>
+        </div>
+        <div class="center">
+            <div class="spec_table" [style.height]="perfomance ? 'auto':'1px'">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th class="type" rowspan="7">Front Mounted Induction Motor</th>
+                        <th>Max. Power(Kw)</th>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <th>Max. Torque (Nm)</th>
+                        <td>395</td>
+                    </tr>
+                    <tr>
+                        <th>Max. Speed (kph)</th>
+                        <td>{{currentInch.maxSpeed}}</td>
+                    </tr>
+                    <tr>
+                        <th>Acceleration (0 - 100 kph)</th>
+                        <td>{{currentInch.acceleration}}</td>
+                    </tr>
+                    <tr>
+                        <th>Braking Distance (m(100-0kph))</th>
+                        <td>{{currentInch.brakingDistance}}</td>
+                    </tr>
+                    <tr>
+                        <th>Motor Type</th>
+                        <td>PERMANENT MAGNET SYNCHRONOUS MOTOR(PMSM)</td>
+                    </tr>
+                    <tr>
+                        <th>Electric Motor power output (kW)</th>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <th class="type" rowspan="3">Battery</th>
+                        <th>Type</th>
+                        <td>Lithium Polymer</td>
+                    </tr>
+                    <tr>
+                        <th>Capacity (kWh)</th>
+                        <td>1.56</td>
+                    </tr>
+                    <tr>
+                        <th>Power Output (kW)</th>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <th class="type" rowspan="2">Transmission</th>
+                        <th>Transmission Type Label</th>
+                        <td>Single speed reduction gear</td>
+                    </tr>
+                    <tr>
+                        <th>Drive Type</th>
+                        <td>FWD</td>
+                    </tr>
+                    <tr>
+                        <th class="type" rowspan="8">Fuel Consumption</th>
+                        <th>Fuel Type</th>
+                        <td>Hydrogen</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel Economy (Low) (kg / 100km)</th>
+                        <td>0.81</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel Economy (Medium) (kg / 100km)</th>
+                        <td>0.83</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel Economy (High) (kg / 100km)</th>
+                        <td>0.83</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel Economy (Ex-High) (kg / 100km)</th>
+                        <td>1.19</td>
+                    </tr>
+                    <tr>
+                        <th>Fuel Economy (Comb) (kg / 100km)</th>
+                        <td>0.95</td>
+                    </tr>
+                    <tr>
+                        <th>CO2 emission (g/km)</th>
+                        <td>Water vapor only</td>
+                    </tr>
+                    <tr>
+                        <th>Hydrogen Tank Capacity (liter)</th>
+                        <td>156.6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="center">
+            <div class="dimension__title" (click)="showDimension()">
+                <a [ngClass]="{'on': dimension}">Dimension</a>
+            </div>
+        </div>
+        <div class="center">
+            <div class="spec_table" [style.height]="dimension ? 'auto' : '1px'">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th class="type" rowspan="8">Exterior</th>
+                        <th>Overall Length (mm)</th>
+                        <td>4,670</td>
+                    </tr>
+                    <tr>
+                        <th>Overall Width (mm)</th>
+                        <td>1,860</td>
+                    </tr>
+                    <tr>
+                        <th>Overall Height (mm)</th>
+                        <td>1,630 / 1,640</td>
+                    </tr>
+                    <tr>
+                        <th>Wheel Base (mm)</th>
+                        <td>2,790</td>
+                    </tr>
+                    <tr>
+                        <th>Front Wheel Tread (mm)</th>
+                        <td>{{currentInch.frontWheel}}</td>
+                    </tr>
+                    <tr>
+                        <th>Rear Wheel Tread (mm)</th>
+                        <td>{{currentInch.rearWheel}}</td>
+                    </tr>
+                    <tr>
+                        <th>Front Over hang (mm)</th>
+                        <td>960</td>
+                    </tr>
+                    <tr>
+                        <th>Rear Over hang (mm)</th>
+                        <td>920</td>
+                    </tr>
+                    <tr>
+                        <th class="type">Cargo</th>
+                        <th>Cargo Area(VDA) (liter)</th>
+                        <td>461 / 1,466</td>
+                    </tr>
+
+                    <tr>
+                        <th class="type" rowspan="3">Weight</th>
+                        <th>Curb Weight (Lightest) (kg)</th>
+                        <td>1,814</td>
+                    </tr>
+                    <tr>
+                        <th>Curb Weight (Heaviest) (kg)</th>
+                        <td>1,873</td>
+                    </tr>
+                    <tr>
+                        <th>Gross Vehicle Weight (kg)</th>
+                        <td>2,340</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="center">
+            <div class="wheel__title" (click)="showWheel()">
+                <a [ngClass]="{'on': wheel}">Wheel</a>
+            </div>
+        </div>
+        <div class="center">
+            <div class="spec_table" [style.height]="wheel ? 'auto' : '1px'">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th class="type" rowspan="4">Wheels &amp; Tires</th>
+                        <th>Front Wheels</th>
+                        <td>{{currentInch.frontWheels}}</td>
+                    </tr>
+                    <tr>
+                        <th>Rear Wheels</th>
+                        <td>{{currentInch.rearWheels}}</td>
+                    </tr>
+                    <tr>
+                        <th>Front Tires</th>
+                        <td>{{currentInch.frontTires}}</td>
+                    </tr>
+                    <tr>
+                        <th>Rear Tires</th>
+                        <td>{{currentInch.rearTires}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="message">
+            <img src="./assets/img/icon_message.png" alt="">
+            "Images and information posted on the above may differ from region to region. All information and
+            illustrations are based on data available
+            at the time of publication and subject to change without notice. Please visit your country homepage for more
+            information."
+        </div>
+    </div>
+    <div class="footer">
+        <div class="arrow">
+            <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
+        </div>
+        <div class="center">
+            <div class="footer__title">
+                Designed for beauty –
+                But created for efficiency
+            </div>
+        </div>
+        <div class="center">
+            <div class="footer__text">
+                The sleek elegance of NEXO’s exterior has been carefully optimized and
+                includes multiple
+                aerodynamic features to create the best fuel economy possible.
+                Improving upon the acclaimed
+                ix35 Fuel Cell, NEXO’s overall drag coefficient
+                has been reduced even further from 0.350 to 0.329.
+            </div>
+        </div>
+        <div class="center">
+            <ion-grid class="buttongroup">
+                <ion-row>
+                    <ion-col class="footer__button active-button">
+                        <div class="text-button select-button">All</div>
+                    </ion-col>
+                    <ion-col class="footer__button">
+                        <div class="text-button">Exterior</div>
+                    </ion-col>
+                    <ion-col class="footer__button">
+                        <div class="text-button">Interior</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div *ngIf="fullScreen" class="galery">
+            <div style="    position: fixed;
+    right: 2vw;
+    top: 1vw;" (click)="closeFull()"><img src="./assets/img/block_2/Close.png" alt=""></div>
+            <div class="current-Car">
+
+            </div>
+        </div>
+        <div class="current-car" [style.background]="url">
+            <div class="fullscreen" (click)="full()">
+                <img src="./assets/img/footer/full.png" alt="">
+            </div>
+        </div>
+        <div class="footer__slider">
+            <div class="footer__slider-item active-slide" (click)="getImage('hw124330_2.png')">
+                <img src="./assets/img/footer/hw124330_2.png" alt="">
+            </div>
+            <div class="footer__slider-item" (click)="getImage('hw124331.png')">
+                <img src="./assets/img/footer/hw124331.png" alt="">
+            </div>
+            <div class="footer__slider-item" (click)="getImage('hw124332.png')">
+                <img src="./assets/img/footer/hw124332.png" alt="">
+            </div>
+            <div class="footer__slider-item" (click)="getImage('hw124333.png')">
+                <img src="./assets/img/footer/hw124333.png" alt="">
+            </div>
+            <div class="footer__slider-item" (click)="getImage('hw124334.png')">
+                <img src="./assets/img/footer/hw124334.png" alt="">
+            </div>
+            <div class="footer__slider-item" (click)="getImage('hw124335.png')">
+                <img src="./assets/img/footer/hw124335.png" alt="">
+            </div>
+        </div>
+    </div>
 </ion-content>

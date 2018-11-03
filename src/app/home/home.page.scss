@@ -1,1 +1,691 @@
+@font-face {
+  font-family: Hyndai-Bold; /* Имя шрифта */
+  src: url(fonts/HyundaiSansHeadOffice-Bold.ttf);
+}
+
+@font-face {
+  font-family: Hyndai-Medium; /* Имя шрифта */
+  src: url(fonts/HyundaiSansHeadOffice-Medium.ttf);
+}
+
+@font-face {
+  font-family: Hyndai-Regular; /* Имя шрифта */
+  src: url(fonts/HyundaiSansHeadOffice-Regular.ttf);
+}
+
+body, html {
+  height: 100%;
+}
+
+.logo {
+  height: 8.5vw;
+}
+
+.blok1 {
+  height: 51vw;
+  z-index: 9;
+  width: 100vw;
+  bottom: 57vw;
+  background: url(img/block_1/1.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+
+}
+
+.main {
+  height: 80%;
+}
+
+.block-text {
+  font-family: Hyndai-Medium;
+  font-size: 15vw;
+  color: #303030;
+  position: absolute;
+  bottom: 0;
+  top: 20vw;
+  left: 10vw;
+  z-index: 10;
+}
+
+.blok2 {
+  height: 60vw;
+  z-index: 1;
+  width: 134vw;
+  left: -20px;
+  top: 0;
+  background: url(img/block_1/2.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.blok3 {
+  height: 15vw;
+  width: 45vw;
+  margin-top: 30vw;
+  left: 70vw;
+  bottom: 48vw;
+  z-index: 5;
+  background: url(img/block_1/3.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.blok4 {
+  height: 51vw;
+  z-index: 9;
+  width: 100vw;
+  bottom: 57vw;
+  background: url(img/block_2/4.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+
+}
+
+.blok5 {
+  height: 60vw;
+  z-index: 1;
+  width: 134vw;
+  left: -20px;
+  top: 0;
+  background: url(img/block_2/5.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.blok6 {
+  height: 15vw;
+  width: 45vw;
+  margin-top: 30vw;
+  left: 70vw;
+  bottom: 48vw;
+  z-index: 5;
+  background: url(img/block_2/6.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+
+  &__img {
+    width: 5vw;
+  }
+}
+
+.active {
+  color: #0AA7CF;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  padding: 5vw;
+  font-size: 1.5vw;
+}
+
+.container {
+  margin: 5%;
+}
+
+.header {
+
+  &__lang {
+    text-align: right;
+    padding-right: 21px;
+    font-size: 2.1vw;
+    font-family: Hyndai-Medium;
+  }
+
+  &__lang-item {
+    display: inline-block;
+    padding-left: 1.5vw;
+  }
+}
+
+.navbar {
+  font-family: Hyndai-Medium;
+
+  &__item {
+    text-align: center;
+    padding: 1vw 0 1vw 0;
+    font-size: 2vw;
+  }
+}
+
+.first {
+  height: 80%;
+  background: url(img/hw124330.jpg) no-repeat center;
+  background-size: cover;
+
+  &__item {
+
+  }
+
+  &__text {
+    font-family: Hyndai-Medium;
+    line-height: 38vw;
+    font-size: 15vw;
+    color: #303030;
+    padding-left: 10%;
+  }
+}
+
+.white {
+  background: white;
+  height: 100%;
+  position: relative;
+  z-index: 22;
+}
+
+.car {
+
+  &__title {
+    color: white;
+    padding-top: 8.5vw;
+    padding-left: 1.5vw;
+    font-size: 2vw;
+    font-family: Hyndai-Medium;
+  }
+
+  &__text {
+    width: 24vw;
+    padding-top: 1vw;
+    padding-left: 2vw;
+    color: white;
+    font-size: 1.5vw;
+    font-family: Hyndai-Regular;
+  }
+}
+
+.second {
+  position: relative;
+  margin: 5%;
+  z-index: 20;
+  height: 100%;
+  background: url(img/highlight_bg.jpg) no-repeat center;
+  background-size: cover;
+
+  &__left-car {
+    position: absolute;
+    height: 27vw;
+    top: 38vw;
+    z-index: 31;
+    width: 80vw;
+    left: 5vw;
+    background: url(img/block_2/hw124230.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  &__right-car {
+    position: absolute;
+    height: 27vw;
+    top: 38vw;
+    z-index: 31;
+    width: 80vw;
+    left: 5vw;
+    background: url(img/block_2/hw124232.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  &__block {
+    width: 90%;
+    padding-top: 3vw;
+  }
+
+  &__front-car {
+    max-width: 90%;
+  }
+
+  &__back-car {
+    max-width: 90%;
+  }
+
+  &__description {
+    font-family: Hyndai-Regular;
+    width: 85%;
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+    padding-top: 3vw;
+    padding-bottom: 4vw;
+  }
+
+  &__text-title {
+    font-family: Hyndai-Bold;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+  }
+
+  &__line {
+    border-bottom: 1px solid #4195D4;
+    width: 4vw;
+    margin-left: 43%;
+    padding-top: 2vw;
+  }
+
+  &__text-text {
+    font-family: Hyndai-Regular;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+    padding-top: 2vw;
+  }
+
+  &__title {
+    text-align: center;
+    color: white;
+    font-family: Hyndai-Medium;
+    font-size: 3.6vw;
+    padding-top: 7vw;
+  }
+
+  &__text {
+
+  }
+}
+
+.plus {
+  position: relative;
+  z-index: 30;
+  bottom: 23vw;
+  left: 1.4vw;
+}
+
+.plus-left {
+  position: relative;
+  z-index: 30;
+  bottom: 23.5vw;
+  right: 1vw;
+}
+
+.delimeter {
+  border-top: 1px solid #C4C4C4;
+  padding-top: 30px;
+}
+
+.heritage {
+
+  &__img {
+    height: 72px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 3.5vw;
+    padding: 3vw;
+    font-family: Hyndai-Medium;
+  }
+
+  &__text {
+    font-size: 2vw;
+    text-align: center;
+    width: 80%;
+    font-family: Hyndai-Regular;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 2vw;
+    font-family: Hyndai-Medium
+  }
+
+  &__subtext {
+    padding-bottom: 10vw;
+    font-size: 1.5vw;
+    text-align: center;
+    font-family: Hyndai-Regular;
+  }
+}
+
+.container-sub {
+  width: 90%;
+  padding-left: 5%;
+}
+
+.car-third {
+  height: 24%;
+  background: url(img/block_3/hw124329.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.car-four {
+  height: 100%;
+  background: url(img/block_4/highlight_slide_bg.png) no-repeat center;
+  background-size: cover;
+}
+
+.top-image {
+  padding-top: 100%;
+}
+
+.bottom-image {
+  padding-top: 12%;
+}
+
+.delimeter-year-top {
+  width: 1vw;
+  border: 0.15vw solid #FFFFFF;
+}
+
+.delimeter-year-bottom {
+  width: 1vw;
+  border: 0.15vw solid #FFFFFF;
+  margin-bottom: 2vw;
+}
+
+.slide-car {
+  display: -webkit-inline-box;
+  overflow-y: auto;
+  width: 100%;
+  height: 108vw;
+  padding-top: 8.5%;
+  padding-left: 6%;
+
+  &__item-top {
+    width: 33vw;
+    height: 100%;
+    color: white;
+    margin-right: 6.5vw;
+  }
+
+  &__year {
+    font-size: 3.5vw;
+    font-family: Hyndai-Bold;
+    padding-bottom: 1.3vw;
+  }
+
+  &__title {
+    font-size: 2.4vw;
+    font-family: Hyndai-Bold;
+    padding-bottom: 1.3vw;
+  }
+
+  &__description {
+    font-size: 1.8vw;
+    height: 18vw;
+    font-family: Hyndai-Regular;
+  }
+
+  &__line {
+    position: absolute;
+    width: 20px;
+    height: 0;
+    left: 116px;
+    top: 301px;
+
+    border: 4px solid #FFFFFF;
+    transform: rotate(-180deg);
+  }
+}
+
+.top {
+  padding-top: 4vw;
+  padding-bottom: 1vw;
+}
+
+.table {
+  background: #F7F7F7;
+}
+
+.specification {
+
+  &__title {
+    text-align: center;
+    font-size: 3.5vw;
+    padding: 0px 0px 3vw 0;
+    font-family: Hyndai-Medium;
+  }
+}
+
+.text {
+
+  &__select {
+    font-size: 2vw;
+    text-align: center;
+    font-family: Hyndai-Medium;
+  }
+}
+
+.select {
+  width: 100%;
+  height: 4vw;
+  border: 1px solid #777;
+  background: white;
+}
+
+.select:hover {
+  border: 1px solid #aaa;
+}
+
+.select-active {
+  border-radius: 0 0 2px 2px;
+  border: 1px solid #aaa;
+}
+
+.selected {
+  display: inline-block;
+  height: 100%;
+  cursor: pointer;
+  font-size: 2vw;
+  font-family: Hyndai-Regular;
+}
+
+.arrow-select {
+  display: inline-block;
+  width: 10%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.option-list {
+  font-family: Hyndai-Regular;
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: -1px;
+  box-sizing: content-box;
+  border: 1px solid #aaa;
+  border-radius: 2px 2px 0 0;
+  background: white;
+  z-index: 2;
+}
+
+.option {
+  font-family: Hyndai-Regular;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, .2);
+  cursor: pointer;
+}
+
+.spec_overview {
+  width: 100%;
+}
+
+.spec_table {
+  width: 90%;
+  height: 1px;
+  overflow: hidden;
+  clear: both;
+  border-top: 1px solid #575a5d
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  font-size: 1.5vw;
+  font-family: Hyndai-Regular;
+  padding: 8px 0 11px 0;
+  text-align: center;
+  border-bottom: 1px solid #d8d9d9;
+  border-left: 1px solid #d8d9d9;
+  border-right: 1px solid #d8d9d9;
+}
+
+table th.type {
+  background: #e7e7e6;
+  font-size: 1.5vw;
+  font-family: Hyndai-Regular;
+  border-bottom: 1px solid #C4C4C4;
+  border-left: 1px solid #C4C4C4;
+  width: 25%;
+}
+
+table th {
+  font-size: 1.5vw;
+  font-family: Hyndai-Medium;
+  padding: 8px 0 11px 0;
+  text-align: center;
+  border-bottom: 1px solid #d8d9d9;
+  border-left: 1px solid #d8d9d9;
+  width: 40%;
+}
+
+.performance_title {
+  background: url(img/block_table/layer.png) no-repeat;
+  width: 90%;
+  background-size: 3vw;
+  background-position-y: center;
+}
+
+.dimension__title {
+  background: url(img/block_table/dimension.png) no-repeat;
+  width: 90%;
+  background-size: 3vw;
+  background-position-y: center;
+}
+
+.wheel__title {
+  background: url(img/block_table/wheel.png) no-repeat;
+  width: 90%;
+  background-size: 3vw;
+  background-position-y: center;
+}
+
+.dimension__title a, .performance_title a, .wheel__title a {
+  display: block;
+  text-decoration: none;
+  padding: 11px 0 9px 40px;
+  font-size: 2vw;
+  color: #333;
+  font-family: Hyndai-Medium;
+  background: url(img/Vector.png) no-repeat right;
+  background-size: 2vw;
+}
+
+.dimension__title a.on, .wheel__title a.on, .performance_title a.on {
+  background: url(img/vectorOff.png) no-repeat right;
+  background-size: 2vw;
+}
+
+.footer {
+  background: #232323;
+  height: 115%;
+
+  &__title {
+    text-align: center;
+    font-size: 3.4vw;
+    color: white;
+    width: 41%;
+    font-family: Hyndai-Medium;
+    padding-top: 6.5vw;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+    width: 75%;
+    padding-top: 4%;
+    font-family: Hyndai-Regular;
+  }
+
+  &__button {
+    height: 7vw;
+  }
+
+  &__slider {
+    display: -webkit-inline-box;
+    overflow-y: auto;
+    width: 100%;
+    height: 20%;
+  }
+
+  &__slider-item {
+    width: 25%;
+    margin-left: 3%;
+    padding-top: 5%;
+  }
+}
+
+.active-slide {
+  opacity: 0.5;
+}
+
+.select-button {
+  background: white !important;
+}
+
+.text-button {
+  width: 100%;
+  height: 4vw;
+  background: #C4C4C4;
+  line-height: 4vw;
+  padding-left: 2vw;
+  font-size: 1.7vw;
+  font-family: Hyndau-Medium;
+}
+
+.active-button {
+  background: url(img/polygon.png) no-repeat 95% 56%;
+  background-size: 5vw;
+}
+
+.buttongroup {
+  width: 47%;
+  padding-top: 5%;
+}
+
+.current-car {
+  height: 40%;
+  background-size: cover !important;
+}
+
+.fullscreen {
+
+}
+
+.galery{
+  z-index: 100;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.current-Car{
+  height: 100%;
+  background: url(img/highlight_bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+
+
+
+
 
