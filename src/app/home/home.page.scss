@@ -22,9 +22,9 @@ body, html {
 }
 
 .blok1 {
-  height: 51vw;
+  height: 45vw;
   z-index: 9;
-  width: 100vw;
+  width: 108vw;
   bottom: 57vw;
   background: url(img/block_1/1.png) no-repeat center;
   background-size: cover;
@@ -33,7 +33,7 @@ body, html {
 }
 
 .main {
-  height: 80%;
+  height: 82%;
 }
 
 .block-text {
@@ -48,9 +48,9 @@ body, html {
 }
 
 .blok2 {
-  height: 60vw;
+  height: 67vw;
   z-index: 1;
-  width: 134vw;
+  width: 141vw;
   left: -20px;
   top: 0;
   background: url(img/block_1/2.png) no-repeat center;
@@ -59,9 +59,9 @@ body, html {
 }
 
 .blok3 {
-  height: 15vw;
-  width: 45vw;
-  margin-top: 30vw;
+  height: 16vw;
+  width: 50vw;
+  margin-top: 25vw;
   left: 70vw;
   bottom: 48vw;
   z-index: 5;
@@ -150,6 +150,8 @@ body, html {
 }
 
 .navbar {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   font-family: Hyndai-Medium;
 
   &__item {
@@ -201,6 +203,25 @@ body, html {
     color: white;
     font-size: 1.5vw;
     font-family: Hyndai-Regular;
+  }
+
+  &__title-right {
+    color: white;
+    font-size: 2vw;
+    font-family: Hyndai-Medium;
+    position: absolute;
+    right: 20vw;
+    top: 6vw;
+  }
+
+  &__text-right {
+    width: 28vw;
+    color: white;
+    font-size: 1.5vw;
+    font-family: Hyndai-Regular;
+    position: absolute;
+    right: 1vw;
+    top: 10vw;
   }
 }
 
@@ -274,7 +295,7 @@ body, html {
   &__text-text {
     font-family: Hyndai-Regular;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: center;
     padding-top: 2vw;
   }
@@ -489,6 +510,7 @@ body, html {
   display: none;
   position: absolute;
   width: 100%;
+  top: 4vw;
   left: -1px;
   box-sizing: content-box;
   border: 1px solid #aaa;
@@ -500,10 +522,11 @@ body, html {
 .option {
   font-family: Hyndai-Regular;
   width: 100%;
-  height: 25px;
-  line-height: 25px;
-  padding: 0 10px;
+  height: 4vw;
+  line-height: normal;
+  padding: 1vw 1vw;
   cursor: pointer;
+  font-size: 1.5vw;
 }
 
 .option:hover {
@@ -584,12 +607,12 @@ table th {
   font-size: 2vw;
   color: #333;
   font-family: Hyndai-Medium;
-  background: url(img/Vector.png) no-repeat right;
-  background-size: 2vw;
+  background: url(img/Vector.png) no-repeat 97%;
+  background-size: 2vw;;
 }
 
 .dimension__title a.on, .wheel__title a.on, .performance_title a.on {
-  background: url(img/vectorOff.png) no-repeat right;
+  background: url(img/vectorOff.png) no-repeat 97%;
   background-size: 2vw;
 }
 
@@ -667,6 +690,7 @@ table th {
 }
 
 .fullscreen {
+  position: relative;
 
 }
 

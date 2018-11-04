@@ -22,6 +22,18 @@ import {DomSanitizer} from '@angular/platform-browser';
             transition('1 => 2', animate('500ms ease-out')),
             transition('2 => 1', animate('500ms ease-in'))
         ]),
+        trigger('carRight', [
+            state('1', style({
+                display: 'none',
+                transform: 'translateX(80%)'
+            })),
+            state('2', style({
+                display: 'block',
+                transform: 'translateX(0)'
+            })),
+            transition('1 => 2', animate('500ms ease-out')),
+            transition('2 => 1', animate('500ms ease-in'))
+        ]),
         trigger('car', [
             state('1', style({})),
             state('2', style({
@@ -87,6 +99,7 @@ export class HomePage {
     position = 0;
     topCar = 57;
     carleft = '1';
+    carRight = '1';
     url: any;
     currentInch = {
         title: '',
@@ -113,7 +126,10 @@ export class HomePage {
     }
 
     showRight() {
-        console.log(this.carleft);
+        this.carRight = '2';
+    }
+
+    showLeft() {
         this.carleft = '2';
     }
 
@@ -126,6 +142,10 @@ export class HomePage {
     }
 
     closeRight() {
+        this.carRight = '1';
+    }
+
+    closeLeft() {
         this.carleft = '1';
     }
 
@@ -197,5 +217,11 @@ export class HomePage {
     showPerfomace() {
         this.perfomance = !this.perfomance;
         console.log(this.perfomance);
+    }
+
+    scrollTo(className: string): void {
+        const elementList = document.querySelectorAll('.' + className);
+        const element = elementList[0] as HTMLElement;
+        element.scrollIntoView({behavior: 'smooth'});
     }
 }
