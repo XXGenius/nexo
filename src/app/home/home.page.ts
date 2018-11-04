@@ -1,9 +1,10 @@
-import {Component, ElementRef, SecurityContext, VERSION, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {trigger, transition, state, style, animate} from '@angular/animations';
-import {Content} from '@ionic/angular';
+import {Content, ModalController} from '@ionic/angular';
 import {Inch17} from './17-inch';
 import {Inch19} from './19-inch';
 import {DomSanitizer} from '@angular/platform-browser';
+
 
 @Component({
     selector: 'app-home',
@@ -85,8 +86,9 @@ import {DomSanitizer} from '@angular/platform-browser';
 
 export class HomePage {
 
-    name: string;
 
+    name: string;
+    slideCount = 0;
     car = '1';
     scy = '1';
 
@@ -116,13 +118,45 @@ export class HomePage {
     currentImage = 'hw124330.png';
 
     fullScreen = false;
+    eng = true;
+    ar = false;
+
+    public basicSliderVal: number;
+    public precisionSliderVal: number;
+    public dummySliderVal = 0;
+    sliderHistory: number;
+
 
     constructor(public el: ElementRef,
                 private inch17: Inch17,
                 private inch19: Inch19,
-                private sanitizer: DomSanitizer) {
+                private sanitizer: DomSanitizer,
+                private modalCtrl: ModalController) {
         this.currentInch = inch19;
         this.getImage('hw124330.png');
+
+    }
+
+
+    title = 'Angular Precision Sliders!';
+
+    onBasicValueChange(value: number) {
+        this.basicSliderVal = Math.round(value);
+    }
+
+    onBasicValueChange2(value: number) {
+        this.sliderHistory = Math.round(value);
+        console.log(this.sliderHistory);
+    }
+
+    arabian() {
+        this.ar = true;
+        this.eng = false;
+    }
+
+    english() {
+        this.ar = false;
+        this.eng = true;
     }
 
     showRight() {
@@ -188,7 +222,7 @@ export class HomePage {
 
     getImage(image) {
         this.currentImage = image;
-        this.url = this.sanitizer.bypassSecurityTrustStyle('url("assets/img/footer/' + image + '")');
+        this.url = this.sanitizer.bypassSecurityTrustStyle('url("assets/img/footer/' + image + '") center');
     }
 
     selectInch17() {

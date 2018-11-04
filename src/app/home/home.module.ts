@@ -10,12 +10,14 @@ import {Inch17} from './17-inch';
 import {ModalGalleryModule} from '@ks89/angular-modal-gallery';
 import 'hammerjs';
 import 'mousetrap';
+import {SlidersModule} from '../lib';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
+        SlidersModule,
         ModalGalleryModule.forRoot(),
         RouterModule.forChild([
             {

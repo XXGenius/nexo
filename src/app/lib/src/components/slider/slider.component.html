@@ -1,0 +1,12 @@
+<div class="wrapper" (dragstart)="onDragStart($event)" (window:resize)="onWindowResize($event)">
+    <div #sliderBar class="slider-bar" [style.height]="trackHeightCss">
+        <div apsBackgroundColour [colour]="bottomColour" [style.flex-grow]="bottomFlexGrow" class="slider-section bottom-section"></div>
+        <div apsBackgroundColour [colour]="middleColour" [style.flex-grow]="middleFlexGrow" class="slider-section middle-section"></div>
+        <div apsBackgroundColour [colour]="topColour" [style.flex-grow]="topFlexGrow" class="slider-section top-section"></div>
+    </div>
+    <div #sliderHandle class="slider-handle" [style.top]="handleTopCss" [style.left]="handleLeftCss">
+        <svg [attr.height]="handleWidth" [attr.width]="handleWidth">
+            <circle [attr.cx]="handleWidth/2" [attr.cy]="handleWidth/2" [attr.r]="handleWidth/2" stroke-width="0" [attr.fill]="handleFill" />
+        </svg>
+    </div>
+</div>
