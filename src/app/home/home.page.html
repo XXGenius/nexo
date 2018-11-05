@@ -45,9 +45,9 @@
             </div>
             <div class="second__item">
                 <div class="second__title">
-                    <p *ngIf="ar">الطريق نحو مستقبل أفضل
+                    <p *ngIf="ar" style="    margin: 0;">الطريق نحو مستقبل أفضل
                     </p>
-                    <p *ngIf="eng">Driving to a cleaner future</p>
+                    <p *ngIf="eng" style="    margin: 0;">Driving to a cleaner future</p>
                 </div>
                 <div class="center">
                     <div class="second__description">
@@ -69,10 +69,10 @@
                         </ion-col>
                         <ion-col class="second__text">
                             <div class="second__text-title">
-                                <p *ngIf="ar">
+                                <p *ngIf="ar" style="margin-top: 0;">
                                     مستوحاة من الطبيعة
                                 </p>
-                                <p *ngIf="eng">
+                                <p *ngIf="eng" style="margin-top: 0;">
                                     Inspired by nature
                                 </p></div>
                             <div class="second__line"></div>
@@ -126,12 +126,13 @@
         <div class="delimeter"></div>
         <div class="heritage">
             <div class="heritage__title">
-                <p *ngIf="eng">Heritage</p>
-                <p *ngIf="ar">إرثنا</p>
+                <p *ngIf="eng" class="text">Heritage</p>
+                <p *ngIf="ar" class="text">إرثنا</p>
             </div>
             <div class="center">
                 <div class="heritage__text">
-                    <p *ngIf="eng"> The All-New NEXO not only embodies Hyundai’s commitment to advanced eco-friendly
+                    <p *ngIf="eng" class="text"> The All-New NEXO not only embodies Hyundai’s commitment to advanced
+                        eco-friendly
                         vehicle development
                         –
                         it also reinforces the company’s leadership
@@ -144,7 +145,8 @@
                         the world's first carmaker with
                         a mass production hydrogen fuel cell vehicle – an unprecedented
                         endeavour in the automotive industry.</p>
-                    <p *ngIf="ar">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير السيارات الحديثة الصديقة
+                    <p *ngIf="ar" class="text">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير السيارات
+                        الحديثة الصديقة
                         للبيئة فقط، بل إنها تعزز أيضاً موقع الشركة القيادي في مجال السيارات الكهربائية العاملة بخلايا
                         الوقود.
                         تعد شركة هيونداي أحد رواد تكنولوجيا خلايا الوقود، حيث بدأت عمليات البحث والتطوير في عام 1998
@@ -175,17 +177,18 @@
                 <ion-col>
                     <div class="container-sub">
                         <div class="heritage__subtitle">
-                            <p *ngIf="eng">World’s 1st mass
+                            <p *ngIf="eng" class="text">World’s 1st mass
                                 production FCEV vehicle</p>
-                            <p *ngIf="ar">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني في العالم</p>
+                            <p *ngIf="ar" class="text">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني في
+                                العالم</p>
                         </div>
                     </div>
                 </ion-col>
                 <ion-col>
                     <div class="container-sub">
-                        <div class="heritage__subtitle"><p *ngIf="eng">Most fuel cell <br>
+                        <div class="heritage__subtitle"><p *ngIf="eng" class="text">Most fuel cell <br>
                             vehicles sold</p>
-                            <p *ngIf="ar">
+                            <p *ngIf="ar" class="text">
                                 أكبر مبيعات للسيارات العاملة بخلايا الوقود الهيدروجيني في العالم
                             </p>
                         </div>
@@ -194,11 +197,11 @@
                 <ion-col>
                     <div class="container-sub">
                         <div class="heritage__subtitle">
-                            <p *ngIf="eng">
+                            <p *ngIf="eng" class="text">
                                 Sustained commitment
                                 to the environment
                             </p>
-                            <p *ngIf="ar">التزام مستدام بسلامة البيئة</p>
+                            <p *ngIf="ar" class="text">التزام مستدام بسلامة البيئة</p>
                         </div>
                     </div>
                 </ion-col>
@@ -208,18 +211,20 @@
             <ion-row>
                 <ion-col>
                     <div class="container-sub">
-                        <div class="heritage__subtext"><p *ngIf="eng">In 2013, the ix35
+                        <div class="heritage__subtext"><p *ngIf="eng" class="text">In 2013, the ix35
                             Fuel Cell became
                             the world’s first mass-produced
                             hydrogen-powered vehicle.</p>
-                            <p *ngIf="ar">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة العاملة بخلايا الوقود
+                            <p *ngIf="ar" class="text">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة العاملة
+                                بخلايا الوقود
                                 الهيدروجيني الأولى في العالم التي يتم تصنيعها على نطاق تجاري واسع.</p>
                         </div>
                     </div>
                 </ion-col>
                 <ion-col>
                     <div class="container-sub">
-                        <div class="heritage__subtext"><p *ngIf="eng">As of 2017, 500 Hyundai fuel cell vehicles have
+                        <div class="heritage__subtext"><p *ngIf="eng" class="text">As of 2017, 500 Hyundai fuel cell
+                            vehicles have
                             been registered
                             in
                             Europe. That is more than
@@ -227,7 +232,8 @@
                             other brands combined. Hyundai sells them in 18 countries around the world, 13 of which are
                             in
                             Europe.</p>
-                            <p *ngIf="ar">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا الوقود المسجلة في أوروبا 500
+                            <p *ngIf="ar" class="text">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا الوقود المسجلة
+                                في أوروبا 500
                                 سيارة، وهو رقم أكبر من كافة مبيعات الشركات الأخرى مجتمعة. تقوم هيونداي حالياً ببيع
                                 سياراتها العاملة بخلايا الوقود الهيدروجيني في 118 دولة، منها 13 في القارة الأوروبية.</p>
                         </div>
@@ -236,13 +242,14 @@
                 <ion-col>
                     <div class="container-sub">
                         <div class="heritage__subtext">
-                            <p *ngIf="eng">Hyundai Motor Company has been dedicated to the development of
+                            <p *ngIf="eng" class="text">Hyundai Motor Company has been dedicated to the development of
                                 Fuel
                                 Cell Vehicles since 1998.
                                 We
                                 are committed to fully playing our role as the global brand leader in eco-friendly
                                 technology.</p>
-                            <p *ngIf="ar">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات العاملة بخلايا الوقود في
+                            <p *ngIf="ar" class="text">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات العاملة
+                                بخلايا الوقود في
                                 عام 1998، ونحن ملتزمون بلعب دورنا كشركة السيارات الأولى عالمياً في تطوير التكنولوجيا
                                 الصديقة للبيئة.</p>
                         </div>
@@ -259,17 +266,18 @@
             <img class="arrow__img" src="./assets/img/arrow.png">
         </div>
         <div class="line-left"></div>
-        <div style="position: relative;height: 100vw;">
-            <div class="slide-car" [style.left]="'-'+sliderHistory+'px'">
+        <div style="position: relative;height: 105vw;">
+            <div class="slide-car" (scroll)="onScrollY($event)">
 
                 <div class="slide-car__item-top">
                     <div class="slide-car__item-top">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">1998</div>
-                        <div class="slide-car__title"><p *ngIf="eng">Launch of fuel cell development</p>
+                        <div class="slide-car__title"><p *ngIf="eng" class="text">Launch of fuel cell development</p>
                             <p *ngIf="ar">إطلاق برنامج تطوير خلايا الوقود</p></div>
                         <div class="slide-car__description bottom">
-                            <p *ngIf="eng"> Hyundai Motor has been at the forefront of hydrogen vehicle development
+                            <p *ngIf="eng" class="text"> Hyundai Motor has been at the forefront of hydrogen vehicle
+                                development
                                 for over two
                                 decades
                                 now.
@@ -277,7 +285,7 @@
                                 for fuel cell technology <br>
                                 in 1998.</p>
 
-                            <p *ngIf="ar" class="ar">إطلاق برنامج تطوير خلايا الوقود
+                            <p *ngIf="ar" class="ar" class="text">إطلاق برنامج تطوير خلايا الوقود
                                 ما زالت شركة هيونداي للسيارات في مركز الصدارة لتطوير السيارات العاملة بخلايا الوقود
                                 لأكثر من عقدين من الزمن، حيث أطلقت برنامجها للبحث وتطوير تكنولوجيا خلايا الوقود في عام
                                 1998.</p>
@@ -290,11 +298,11 @@
                         <img class="top-image" src="./assets/img/block_4/2.png">
                         <div class="slide-car__year  top">2002</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p *ngIf="eng">75kW Santa Fe FCEV</p>
+                        <div class="slide-car__title"><p *ngIf="eng" class="text">75kW Santa Fe FCEV</p>
                             <p *ngIf="ar">سانتافيه العاملة بخلايا الوقود بقدرة 75 كيلوواط</p></div>
                         <div class="slide-car__description">
 
-                            <ul *ngIf="eng" style="padding: 0 0 0 2vw;margin: 0;">
+                            <ul *ngIf="eng" style="padding: 0 0 0 2vw;margin: 0;" class="text">
                                 <li>Base model: Santa Fe SM</li>
                                 <li> Operating range: 230 km</li>
                                 <li> Fuel cell power output: 75 kW</li>
@@ -313,13 +321,13 @@
                     </div>
                 </div>
                 <div class="slide-car__item-top">
-                    <div class="slide-car__item-top bottom-image">
+                    <div class="slide-car__item-top bottom-image" style="padding-top: 12% !important;">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2004</div>
-                        <div class="slide-car__title"><p *ngIf="eng">80kW Tucson FCEV</p>
-                            <p *ngIf="ar">توسون العاملة بخلايا الوقود بقدرة 80 كيلوواط</p></div>
+                        <div class="slide-car__title"><p *ngIf="eng" class="text">80kW Tucson FCEV</p>
+                            <p *ngIf="ar" class="text">توسون العاملة بخلايا الوقود بقدرة 80 كيلوواط</p></div>
                         <div class="slide-car__description bottom">
-                            <p *ngIf="eng">US DOE FCEV demonstration
+                            <p *ngIf="eng" class="text">US DOE FCEV demonstration
                                 [2004-2009]
 
                                 Hyundai also participated in the
@@ -327,7 +335,7 @@
                                 program led by the U.S. Department
                                 of
                                 Energy between 2004 and 2009.</p>
-                            <p *ngIf="ar">
+                            <p *ngIf="ar" class="text">
                                 شاركت هيونداي أيضاً بالبرنامج التجريبي في أمريكا الشمالية للسيارات العاملة بخلايا الوقود
                                 الذي قادته وزارة الطاقة الأمريكية بين عامي 2004 و 2009.
                             </p>
@@ -474,11 +482,11 @@
             </div>
         </div>
         <div class="center">
-            <div class="vertical-center" style="width: 60%">
-                <aps-responsive-slider class="slider basic-slider" [minValue]="0" [maxValue]="956" [initialValue]="0"
-                                       [handleWidth]="30" [trackHeight]="1"
-                                       [bottomColour]="'white'" [middleColour]="'white'" [topColour]="'white'"
-                                       (valueChanged)="onBasicValueChange2($event)"></aps-responsive-slider>
+            <div class="bar">
+                <div class="bar__line"></div>
+                <div class="bar__arrows" [style.left]="sliderHistory + 'vw'"><img class="bar__img"
+                                                                                  src="./assets/img/polz.png" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -507,13 +515,12 @@
                          style="
     background: #DFDFDF;
     height: 3.7vw;
-    border-left: 1px solid;
     position: absolute;
     right: 0;
     top: 0;
-    width: 4vw;"><img style="max-width: 50%;
-    margin-bottom: 1.5vw;
-    margin-left: 1vw;" src="./assets/img/arrows.png" alt=""></div>
+    width: 4vw;"><img style="max-width: 30%;
+    margin-bottom: -0.7vw;
+    margin-left: 1.3vw;" src="./assets/img/arrows.png" alt=""></div>
                     <div class="option-list" [style.display]="select?'block':'none'">
                         <div class="option" data-select-val="0" (click)="selectInch17()">FCEV powertrain (17-inch
                             wheels)
@@ -592,13 +599,13 @@
                         <td>395</td>
                     </tr>
                     <tr>
-                        <th><p *ngIf="eng">Max. Speed (kph)</p>
-                            <p *ngIf="ar">السرعة القصوى 179 كم/سا</p></th>
+                        <th><p class="text" *ngIf="eng">Max. Speed (kph)</p>
+                            <p class="text" *ngIf="ar">السرعة القصوى 179 كم/سا</p></th>
                         <td>{{currentInch.maxSpeed}}</td>
                     </tr>
                     <tr>
-                        <th><p *ngIf="eng">Acceleration (0 - 100 kph)</p>
-                            <p *ngIf="ar">التسارع (0 – 100 كم/سا) 9.2 ثانية</p>
+                        <th><p class="text" *ngIf="eng">Acceleration (0 - 100 kph)</p>
+                            <p class="text" *ngIf="ar">التسارع (0 – 100 كم/سا) 9.2 ثانية</p>
                         </th>
                         <td>{{currentInch.acceleration}}</td>
                     </tr>
@@ -780,42 +787,11 @@
         <div class="arrow">
             <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
         </div>
-        <div class="center">
-            <div class="footer__title">
-                Designed for beauty –
-                But created for efficiency
-            </div>
-        </div>
-        <div class="center">
-            <div class="footer__text">
-                The sleek elegance of NEXO’s exterior has been carefully optimized and
-                includes multiple
-                aerodynamic features to create the best fuel economy possible.
-                Improving upon the acclaimed
-                ix35 Fuel Cell, NEXO’s overall drag coefficient
-                has been reduced even further from 0.350 to 0.329.
-            </div>
-        </div>
-
-        <div class="center">
-            <ion-grid class="buttongroup">
-                <ion-row>
-                    <ion-col class="footer__button active-button">
-                        <div ngDraggable class="text-button select-button">All</div>
-                    </ion-col>
-                    <ion-col class="footer__button">
-                        <div class="text-button">Exterior</div>
-                    </ion-col>
-                    <ion-col class="footer__button">
-                        <div class="text-button">Interior</div>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </div>
         <div *ngIf="fullScreen" class="galery">
             <div style="    position: fixed;
     left: 3vw;
-    top: 3vw;
+       top: 12vw;
+
     width: 20%;"><img src="./assets/img/footer/galery_logo.png" alt=""></div>
             <div style="    position: fixed;
     left: 2vw;
@@ -828,7 +804,8 @@
 
             <div style="    position: fixed;
     right: 2vw;
-    top: 1vw;" (click)="closeFull()"><img style="max-width: 10vw;" src="./assets/img/block_2/Close.png" alt=""></div>
+        top: 12vw;
+" (click)="closeFull()"><img style="max-width: 10vw;" src="./assets/img/block_2/Close.png" alt=""></div>
             <div class="current-Car" [style.background]="url">
 
             </div>
@@ -836,13 +813,13 @@
         <div class="current-car" [style.background]="url">
             <div class="fullscreen" (click)="full()">
                 <img style="    position: absolute;
-    top: 46vw;
+    top: 64vw;
     right: 4vw;
     max-width: 6%;" src="./assets/img/footer/full.png" alt="">
             </div>
         </div>
         <div style="height: 20%">
-            <div class="footer__slider" [style.left]="'-'+basicSliderVal+'px'">
+            <div class="footer__slider" (scroll)="onScrollGallery($event)">
                 <div class="footer__slider-item active-slide" (click)="getImage('hw124330_2.png')">
                     <img src="./assets/img/footer/hw124330_2.png" alt="">
                 </div>
@@ -863,16 +840,13 @@
                 </div>
             </div>
         </div>
-
         <div class="center">
-            <div class="vertical-center" style="width: 60%">
-                <aps-responsive-slider class="slider basic-slider" [minValue]="0" [maxValue]="450" [initialValue]="0"
-                                       [handleWidth]="30" [trackHeight]="1"
-                                       [bottomColour]="'white'" [middleColour]="'white'" [topColour]="'white'"
-                                       (valueChanged)="onBasicValueChange($event)"></aps-responsive-slider>
+            <div class="bar">
+                <div class="bar__line"></div>
+                <div class="bar__arrows" [style.left]="sliderGallery + 'vw'"><img class="bar__img"
+                                                                                  src="./assets/img/polz.png" alt="">
+                </div>
             </div>
         </div>
-
-
     </div>
 </ion-content>

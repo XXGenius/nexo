@@ -13,9 +13,31 @@
   src: url(fonts/HyundaiSansHeadOffice-Regular.ttf);
 }
 
+@font-face {
+  font-family: Ar-light; /* Имя шрифта */
+  src: url(fonts/GE-SS-TWO-Light.otf);
+}
+
+@font-face {
+  font-family: Ar-Bold; /* Имя шрифта */
+  src: url(fonts/HyundaiSansHeadOffice-Medium.ttf);
+}
+
+@font-face {
+  font-family: Ar-Medium; /* Имя шрифта */
+  src: url(fonts/HyundaiSansHeadOffice-Regular.ttf);
+}
+
 body, html {
   height: 100%;
 }
+
+.text{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
 .ar{
   text-align: right;
  }
@@ -44,8 +66,8 @@ body, html {
   color: #303030;
   position: absolute;
   bottom: 0;
-  top: 20vw;
-  left: 10vw;
+  top: 0vw;
+  left: 9vw;
   z-index: 10;
 }
 
@@ -237,29 +259,28 @@ body, html {
 
   &__left-car {
     position: absolute;
-    height: 27vw;
-    top: 38vw;
+    height: 24vw;
+    top: 27vw;
     z-index: 31;
     width: 80vw;
     left: 5vw;
-    background: url(img/block_2/hw124230.png) no-repeat center;
-    background-size: 100%;
+    background: url(img/block_2/hw124230.png) no-repeat 47%;
+    background-size: cover;
   }
 
   &__right-car {
     position: absolute;
-    height: 27vw;
-    top: 38vw;
+    height: 24vw;
+    top: 27vw;
     z-index: 31;
     width: 80vw;
     left: 5vw;
-    background: url(img/block_2/hw124232.png) no-repeat center;
-    background-size: 100%;
+    background: url(img/block_2/hw124232.png) no-repeat 47%;
+    background-size: cover;
   }
 
   &__block {
     width: 90%;
-    padding-top: 3vw;
   }
 
   &__front-car {
@@ -276,8 +297,6 @@ body, html {
     color: white;
     text-align: center;
     font-size: 2vw;
-    padding-top: 3vw;
-    padding-bottom: 4vw;
   }
 
   &__text-title {
@@ -291,15 +310,13 @@ body, html {
     border-bottom: 1px solid #4195D4;
     width: 4vw;
     margin-left: 43%;
-    padding-top: 2vw;
   }
 
   &__text-text {
     font-family: Hyndai-Regular;
     color: white;
-    font-size: 1.5vw;
     text-align: center;
-    padding-top: 2vw;
+    font-size: 2vw;
   }
 
   &__title {
@@ -307,7 +324,6 @@ body, html {
     color: white;
     font-family: Hyndai-Medium;
     font-size: 3.6vw;
-    padding-top: 7vw;
   }
 
   &__text {
@@ -380,7 +396,7 @@ body, html {
 }
 
 .car-four {
-  height: 100%;
+  height: 110%;
   background: url(img/block_4/highlight_slide_bg.png) no-repeat center;
   background-size: cover;
   margin-bottom: 5%;
@@ -388,11 +404,11 @@ body, html {
 }
 
 .top-image {
-  padding-top: 100%;
+  padding-top: 32vw;
 }
 
 .bottom-image {
-  padding-top: 12%;
+  padding-top: 11%;
 }
 
 .delimeter-year-top {
@@ -417,13 +433,10 @@ body, html {
 
 .slide-car {
   display: -webkit-inline-box;
-  overflow: hidden;
-  width: 1500px;
-  height: 108vw;
-  padding-top: 8.5%;
+  overflow: -webkit-paged-y;
+  width: 100%;
+  padding-top: 3%;
   padding-left: 6%;
-  position: absolute;
-  left: -0px;
 
   &__item-top {
     width: 33vw;
@@ -633,7 +646,7 @@ table th {
 
 .footer {
   background: #232323;
-  height: 115%;
+  height: 100%;
 
   &__title {
     text-align: center;
@@ -658,13 +671,9 @@ table th {
   }
 
   &__slider {
-    display: inline-flex;
-    overflow: hidden;
+    display: -webkit-inline-box;
+    overflow: -webkit-paged-y;
     width: 100%;
-    scroll-margin: 0;
-    position: absolute;
-    width: 1106px;
-    left: 0;
   }
 
   &__slider-item {
@@ -703,7 +712,7 @@ table th {
 }
 
 .current-car {
-  height: 40%;
+  height: 60%;
   background-size: cover !important;
 }
 
@@ -742,36 +751,15 @@ table th {
   }
 
   &__arrows{
-    top: 15px;
     position: absolute;
-    bottom: 0;
-    left: 29vw;
+    top: 2vw;
   }
 
   &__img{
     width: 50%;
   }
 }
-
-
-input {
-  max-width: 100%;
-}
-
-.slider {
-  display: block;
-  margin: 30px 0px;
-}
-
-span {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none; /* Webkit */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE 10  */
-
-  /* Currently not supported in Opera but will be soon */
-  -o-user-select: none;
-  user-select: none;
-}
+//942
+//'left: 80vw'
 
 

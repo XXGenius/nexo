@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {trigger, transition, state, style, animate} from '@angular/animations';
 import {Content, ModalController} from '@ionic/angular';
 import {Inch17} from './17-inch';
@@ -14,11 +14,11 @@ import {DomSanitizer} from '@angular/platform-browser';
         trigger('carLeft', [
             state('1', style({
                 display: 'none',
-                transform: 'translateX(-80%)'
+                width: '17vw'
             })),
             state('2', style({
                 display: 'block',
-                transform: 'translateX(0)'
+                width: '80vw'
             })),
             transition('1 => 2', animate('500ms ease-out')),
             transition('2 => 1', animate('500ms ease-in'))
@@ -26,11 +26,13 @@ import {DomSanitizer} from '@angular/platform-browser';
         trigger('carRight', [
             state('1', style({
                 display: 'none',
-                transform: 'translateX(80%)'
+                width: '17vw',
+                left: '68vw'
             })),
             state('2', style({
                 display: 'block',
-                transform: 'translateX(0)'
+                width: '80vw',
+                left: '5vw'
             })),
             transition('1 => 2', animate('500ms ease-out')),
             transition('2 => 1', animate('500ms ease-in'))
@@ -124,7 +126,8 @@ export class HomePage {
     public basicSliderVal: number;
     public precisionSliderVal: number;
     public dummySliderVal = 0;
-    sliderHistory: number;
+    sliderHistory = 20;
+    sliderGallery = 20;
 
 
     constructor(public el: ElementRef,
@@ -218,6 +221,24 @@ export class HomePage {
         //     this.scy = '1';
         //     this.secondScreen = '1';
         // }
+    }
+
+    @HostListener('scroll', ['$event'])
+    onScrollY(event) {
+        const sliderPercent = 0.6;
+        const progress = (event.target.scrollLeft / 100) * 4.22;
+        console.log(progress);
+        console.log(event.target.scrollLeft);
+        this.sliderHistory = 20 + sliderPercent * progress;
+    }
+
+    @HostListener('scroll', ['$event'])
+    onScrollGallery(event) {
+        const sliderPercent = 0.6;
+        const progress = (event.target.scrollLeft / 100) * 16.5;
+        console.log(progress);
+        console.log(event.target.scrollLeft);
+        this.sliderGallery = 20 + sliderPercent * progress;
     }
 
     getImage(image) {
