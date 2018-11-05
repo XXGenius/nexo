@@ -9,8 +9,7 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AngularDraggableModule} from 'angular2-draggable';
-import {SlidersModule} from './lib';
+
 
 
 
@@ -22,8 +21,6 @@ import {SlidersModule} from './lib';
         IonicModule.forRoot(),
         AppRoutingModule,
         BrowserAnimationsModule,
-        AngularDraggableModule,
-        SlidersModule
     ],
     providers: [
         StatusBar,

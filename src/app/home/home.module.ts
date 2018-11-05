@@ -12,6 +12,9 @@ import 'hammerjs';
 import 'mousetrap';
 import {SlidersModule} from '../lib';
 
+
+
+
 @NgModule({
     imports: [
         CommonModule,

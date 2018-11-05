@@ -795,19 +795,23 @@
     width: 20%;"><img src="./assets/img/footer/galery_logo.png" alt=""></div>
             <div style="    position: fixed;
     left: 2vw;
-    top: 50vw;
-    width: 10%;"><img src="./assets/img/footer/left.png" alt=""></div>
+       top: 65vw;
+    width: 10%;    z-index: 100;" (click)="prevSlide()"><img src="./assets/img/footer/left.png" alt=""></div>
             <div style="position: fixed;
     right: 2vw;
-    top: 50vw;
-    width: 10%;"><img src="./assets/img/footer/right.png" alt=""></div>
+        top: 65vw;
+    width: 10%;    z-index: 100;" (click)="nextSlide()"><img src="./assets/img/footer/right.png" alt=""></div>
 
             <div style="    position: fixed;
     right: 2vw;
         top: 12vw;
 " (click)="closeFull()"><img style="max-width: 10vw;" src="./assets/img/block_2/Close.png" alt=""></div>
-            <div class="current-Car" [style.background]="url">
-
+            <div style="padding-top: 40%">
+                <ion-slides loop="true" zoom="true" style="background-color: black">
+                    <ion-slide zoom="true" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+                        <img data-src="./assets/img/slide/{{image}}.jpg">
+                    </ion-slide>
+                </ion-slides>
             </div>
         </div>
         <div class="current-car" [style.background]="url">

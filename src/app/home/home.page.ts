@@ -1,6 +1,6 @@
 import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {trigger, transition, state, style, animate} from '@angular/animations';
-import {Content, ModalController} from '@ionic/angular';
+import {Content, ModalController, Slides} from '@ionic/angular';
 import {Inch17} from './17-inch';
 import {Inch19} from './19-inch';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -117,11 +117,13 @@ export class HomePage {
         frontTires: '',
         rearTires: ''
     };
-    currentImage = 'hw124330.png';
+    currentImage = '1.png';
 
     fullScreen = false;
     eng = true;
     ar = false;
+
+    @ViewChild(Slides) slides: Slides;
 
     public basicSliderVal: number;
     public precisionSliderVal: number;
@@ -140,8 +142,14 @@ export class HomePage {
 
     }
 
+    nextSlide() {
+        this.slides.slideNext();
+    }
 
-    title = 'Angular Precision Sliders!';
+    prevSlide() {
+        this.slides.slidePrev();
+    }
+
 
     onBasicValueChange(value: number) {
         this.basicSliderVal = Math.round(value);
@@ -207,20 +215,6 @@ export class HomePage {
                 this.topCar = 57 + height;
             }
         }
-        // if (event.detail.scrollTop >= 100 && event.detail.scrollTop <= 200) {
-        //     this.car = '2';
-        //     this.scy = '2';
-        // } else if (event.detail.scrollTop >= 330) {
-        //     this.secondScreen = '4';
-        // } else if (event.detail.scrollTop > 200) {
-        //     this.scy = '3';
-        //     this.car = '3';
-        //     this.isDisabled = true;
-        // } else if (event.detail.scrollTop >= 0) {
-        //     this.car = '1';
-        //     this.scy = '1';
-        //     this.secondScreen = '1';
-        // }
     }
 
     @HostListener('scroll', ['$event'])
