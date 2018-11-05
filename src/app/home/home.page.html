@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header ion-fixed>
     <ion-grid class="header" style="border-bottom: 1px solid #DFDFDF;padding: 0;">
         <ion-row>
             <ion-col align-self-center>
@@ -12,24 +12,23 @@
     </ion-grid>
     <ion-grid class="navbar" style="border-bottom: 1px solid #DFDFDF;">
         <ion-row>
-            <ion-col class="navbar__item">
-                <div class="active" (click)="scrollTo('main')">Home</div>
+            <ion-col class="navbar__item" (click)="scrollTo('main')">
+                <div class="active" [ngClass]="{'active': home}">Home</div>
             </ion-col>
-            <ion-col class="navbar__item">
-                <div style="text-align: left;padding-left: 3.5vw;" (click)="scrollTo('heritage')">Heritage
+            <ion-col class="navbar__item" (click)="scrollTo('delimeter')">
+                <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}">Heritage
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left">
-                <div (click)="scrollTo('specification')">Specification</div>
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollTo('delimeter.container')">
+                <div [ngClass]="{'active': table}">Specification</div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left">
-                <div (click)="scrollTo('footer')">Exterior&Interior</div>
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollTo('footer')">
+                <div [ngClass]="{'active': footer}">Exterior&Interior</div>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-header>
 <ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
-
     <div class="main">
         <div class="block-text">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
@@ -41,7 +40,7 @@
     </div>
     <div class="white">
         <div class="second">
-            <div class="arrow">
+            <div class="arrow" (click)="scrollTo('second')">
                 <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
             </div>
             <div class="second__item">
@@ -121,7 +120,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="box arrow">
+        <div class="box arrow" (click)="scrollTo('delimeter')">
             <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter"></div>
@@ -264,7 +263,7 @@
     </div>
     <div class="car-four">
         <div class="arrow">
-            <img class="arrow__img" src="./assets/img/arrow.png">
+            <img (click)="scrollTo('slide-car')" class="arrow__img" src="./assets/img/arrow.png">
         </div>
         <div class="line-left"></div>
         <div style="position: relative;height: 105vw;">
@@ -336,7 +335,7 @@
                                 program led by the U.S. Department
                                 of
                                 Energy between 2004 and 2009.</p>
-                            <p *ngIf="ar" class="text" >
+                            <p *ngIf="ar" class="text">
                                 شاركت هيونداي أيضاً بالبرنامج التجريبي في أمريكا الشمالية للسيارات العاملة بخلايا الوقود
                                 الذي قادته وزارة الطاقة الأمريكية بين عامي 2004 و 2009.
                             </p>
@@ -493,7 +492,7 @@
     </div>
     <div class="container table">
         <div class="arrow" style="    padding-bottom: 0;">
-            <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            <img (click)="scrollTo('delimeter.container')" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter container"></div>
         <div class="specification">
@@ -531,16 +530,8 @@
                         </div>
                     </div>
                 </ion-col>
-                <ion-col class="text__select" style="font-family: Hyndai-Regular" align-self-center>
-                    <div style="height: 2.5vw;
-    background: black;
-    display: inline-block;
-    width: 3vw;"><img style="width: 50%" src="./assets/img/vector.png" alt="">
-                    </div>
-                    <div style="    display: inline-block;
-    padding-left: 2vw;
-    font-size: 1.5vw;" (click)="expendAll()">Expand all
-                    </div>
+                <ion-col class="text__select" align-self-center>
+
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -786,62 +777,20 @@
     </div>
     <div class="footer">
         <div class="arrow">
-            <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
+            <img (click)="scrollTo('footer')" class="arrow__img" src="../../assets/img/arrow.png" alt="">
         </div>
-        <div *ngIf="fullScreen" class="galery">
-            <div style="    position: fixed;
-    left: 3vw;
-          top: 18vw;
-
-    width: 20%;"><img src="./assets/img/footer/galery_logo.png" alt=""></div>
-            <div style="    position: fixed;
-    left: 2vw;
-       top: 65vw;
-    width: 10%;    z-index: 100;" (click)="prevSlide()"><img src="./assets/img/footer/left.png" alt=""></div>
-            <div style="position: fixed;
-    right: 2vw;
-        top: 65vw;
-    width: 10%;    z-index: 100;" (click)="nextSlide()"><img src="./assets/img/footer/right.png" alt=""></div>
-
-            <div style="    position: fixed;
-    right: 2vw;
-            top: 18vw;
-" (click)="closeFull()"><img style="max-width: 10vw;" src="./assets/img/block_2/Close.png" alt=""></div>
-            <div style="padding-top: 40%">
-                <ion-slides loop="true" zoom="true" style="background-color: black">
-                    <ion-slide zoom="true" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-                        <img data-src="./assets/img/slide/{{image}}.jpg">
-                    </ion-slide>
-                </ion-slides>
-            </div>
-        </div>
-        <div class="current-car" [style.background]="url">
-            <div class="fullscreen" (click)="full()">
-                <img style="    position: absolute;
-    top: 60vw;
-    right: 4vw;
-    max-width: 6%;" src="./assets/img/footer/full.png" alt="">
-            </div>
-        </div>
+        <ion-slides loop="true" zoom="true" style="background-color: black">
+            <ion-slide zoom="true"
+                       *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]">
+                <img data-src="./assets/img/slide/{{image}}.jpg">
+            </ion-slide>
+        </ion-slides>
         <div style="height: 20%">
             <div class="footer__slider" (scroll)="onScrollGallery($event)">
-                <div class="footer__slider-item active-slide" (click)="getImage('hw124330_2.png')">
-                    <img src="./assets/img/footer/hw124330_2.png" alt="">
-                </div>
-                <div class="footer__slider-item" (click)="getImage('hw124331.png')">
-                    <img src="./assets/img/footer/hw124331.png" alt="">
-                </div>
-                <div class="footer__slider-item" (click)="getImage('hw124332.png')">
-                    <img src="./assets/img/footer/hw124332.png" alt="">
-                </div>
-                <div class="footer__slider-item" (click)="getImage('hw124333.png')">
-                    <img src="./assets/img/footer/hw124333.png" alt="">
-                </div>
-                <div class="footer__slider-item" (click)="getImage('hw124334.png')">
-                    <img src="./assets/img/footer/hw124334.png" alt="">
-                </div>
-                <div class="footer__slider-item" (click)="getImage('hw124335.png')">
-                    <img src="./assets/img/footer/hw124335.png" alt="">
+                <div class="footer__slider-item"
+                     *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]"
+                     (click)="getImage(image)">
+                    <img src="./assets/img/slide/{{image}}.jpg">
                 </div>
             </div>
         </div>

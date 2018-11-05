@@ -122,6 +122,11 @@ export class HomePage {
     eng = true;
     ar = false;
 
+    home = true;
+    heritage = false;
+    table = false;
+    footer = false;
+
     @ViewChild(Slides) slides: Slides;
 
     public basicSliderVal: number;
@@ -135,27 +140,8 @@ export class HomePage {
                 private sanitizer: DomSanitizer,
                 private modalCtrl: ModalController) {
         this.currentInch = inch19;
-        this.getImage('hw124330.png');
-
     }
 
-    nextSlide() {
-        this.slides.slideNext();
-    }
-
-    prevSlide() {
-        this.slides.slidePrev();
-    }
-
-
-    onBasicValueChange(value: number) {
-        this.basicSliderVal = Math.round(value);
-    }
-
-    onBasicValueChange2(value: number) {
-        this.sliderHistory = Math.round(value);
-        console.log(this.sliderHistory);
-    }
 
     arabian() {
         this.ar = true;
@@ -199,6 +185,7 @@ export class HomePage {
 
     onScroll(event) {
         console.log(event.detail.scrollTop);
+        this.getActiveItemMenu(event.detail.scrollTop);
         if (this.position > event.detail.scrollTop) {
             let height = event.detail.scrollTop;
             this.position = height;
@@ -214,6 +201,30 @@ export class HomePage {
         }
     }
 
+    getActiveItemMenu(position) {
+        if (position >= 0 && position < 1600) {
+            this.home = true;
+            this.heritage = false;
+            this.table = false;
+            this.footer = false;
+        } else if (position >= 1600 && position < 3400) {
+            this.home = false;
+            this.heritage = true;
+            this.table = false;
+            this.footer = false;
+        } else if (position >= 3400 && position < 4400) {
+            this.home = false;
+            this.heritage = false;
+            this.table = true;
+            this.footer = false;
+        } else if (position >= 4400 && position < 7000) {
+            this.home = false;
+            this.heritage = false;
+            this.table = false;
+            this.footer = true;
+        }
+    }
+
     @HostListener('scroll', ['$event'])
     onScrollY(event) {
         const sliderPercent = 0.6;
@@ -226,15 +237,15 @@ export class HomePage {
     @HostListener('scroll', ['$event'])
     onScrollGallery(event) {
         const sliderPercent = 0.6;
-        const progress = (event.target.scrollLeft / 100) * 16.5;
+        const progress = (event.target.scrollLeft / 100) * 1.5;
         console.log(progress);
         console.log(event.target.scrollLeft);
         this.sliderGallery = 20 + sliderPercent * progress;
     }
 
     getImage(image) {
-        this.currentImage = image;
-        this.url = this.sanitizer.bypassSecurityTrustStyle('url("assets/img/footer/' + image + '") center');
+        this.sliderGallery = 20 + (0.32 * image);
+        this.slides.slideTo(image, 500);
     }
 
     selectInch17() {
