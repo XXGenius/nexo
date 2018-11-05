@@ -90,7 +90,6 @@ export class HomePage {
 
 
     name: string;
-    slideCount = 0;
     car = '1';
     scy = '1';
 
@@ -126,8 +125,6 @@ export class HomePage {
     @ViewChild(Slides) slides: Slides;
 
     public basicSliderVal: number;
-    public precisionSliderVal: number;
-    public dummySliderVal = 0;
     sliderHistory = 20;
     sliderGallery = 20;
 
