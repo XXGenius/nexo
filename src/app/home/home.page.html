@@ -10,15 +10,13 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-</ion-header>
-<ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
-    <ion-grid class="navbar">
+    <ion-grid class="navbar" style="border-bottom: 1px solid #DFDFDF;">
         <ion-row>
             <ion-col class="navbar__item">
-                <div class="active" (click)="scrollTo('Home')">Home</div>
+                <div class="active" (click)="scrollTo('main')">Home</div>
             </ion-col>
             <ion-col class="navbar__item">
-                <div style="text-align: left;padding-left: 3.5vw;" (click)="scrollTo('heritage__subtitle')">Heritage
+                <div style="text-align: left;padding-left: 3.5vw;" (click)="scrollTo('heritage')">Heritage
                 </div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left">
@@ -29,10 +27,13 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+</ion-header>
+<ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
+
     <div class="main">
         <div class="block-text">
-            <p *ngIf="eng">NEXO</p>
-            <p *ngIf="ar">نكسو</p>
+            <p *ngIf="eng" style="margin: 0">NEXO</p>
+            <p *ngIf="ar" style="max-width: 0;">نكسو</p>
         </div>
         <div class="blok2"></div>
         <div class="blok3"></div>
@@ -790,7 +791,7 @@
         <div *ngIf="fullScreen" class="galery">
             <div style="    position: fixed;
     left: 3vw;
-       top: 12vw;
+          top: 18vw;
 
     width: 20%;"><img src="./assets/img/footer/galery_logo.png" alt=""></div>
             <div style="    position: fixed;
@@ -804,7 +805,7 @@
 
             <div style="    position: fixed;
     right: 2vw;
-        top: 12vw;
+            top: 18vw;
 " (click)="closeFull()"><img style="max-width: 10vw;" src="./assets/img/block_2/Close.png" alt=""></div>
             <div style="padding-top: 40%">
                 <ion-slides loop="true" zoom="true" style="background-color: black">
@@ -817,7 +818,7 @@
         <div class="current-car" [style.background]="url">
             <div class="fullscreen" (click)="full()">
                 <img style="    position: absolute;
-    top: 64vw;
+    top: 60vw;
     right: 4vw;
     max-width: 6%;" src="./assets/img/footer/full.png" alt="">
             </div>
