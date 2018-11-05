@@ -20,7 +20,7 @@
                 </div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left">
-                <div (click)="scrollTo('table')">Specification</div>
+                <div (click)="scrollTo('specification')">Specification</div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left">
                 <div (click)="scrollTo('footer')">Exterior&Interior</div>
@@ -33,7 +33,7 @@
     <div class="main">
         <div class="block-text">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
-            <p *ngIf="ar" style="max-width: 0;">نكسو</p>
+            <p *ngIf="ar" style="margin: 0;">نكسو</p>
         </div>
         <div class="blok2"></div>
         <div class="blok3"></div>
@@ -275,7 +275,7 @@
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">1998</div>
                         <div class="slide-car__title"><p *ngIf="eng" class="text">Launch of fuel cell development</p>
-                            <p *ngIf="ar">إطلاق برنامج تطوير خلايا الوقود</p></div>
+                            <p *ngIf="ar" class="text">إطلاق برنامج تطوير <br> خلايا الوقود</p></div>
                         <div class="slide-car__description bottom">
                             <p *ngIf="eng" class="text"> Hyundai Motor has been at the forefront of hydrogen vehicle
                                 development
@@ -327,7 +327,7 @@
                         <div class="slide-car__year">2004</div>
                         <div class="slide-car__title"><p *ngIf="eng" class="text">80kW Tucson FCEV</p>
                             <p *ngIf="ar" class="text">توسون العاملة بخلايا الوقود بقدرة 80 كيلوواط</p></div>
-                        <div class="slide-car__description bottom">
+                        <div class="slide-car__description bottom" [style.height.vw]="ar ? '14' : '18'">
                             <p *ngIf="eng" class="text">US DOE FCEV demonstration
                                 [2004-2009]
 
@@ -336,7 +336,7 @@
                                 program led by the U.S. Department
                                 of
                                 Energy between 2004 and 2009.</p>
-                            <p *ngIf="ar" class="text">
+                            <p *ngIf="ar" class="text" >
                                 شاركت هيونداي أيضاً بالبرنامج التجريبي في أمريكا الشمالية للسيارات العاملة بخلايا الوقود
                                 الذي قادته وزارة الطاقة الأمريكية بين عامي 2004 و 2009.
                             </p>
