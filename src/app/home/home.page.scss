@@ -32,15 +32,25 @@ body, html {
   height: 100%;
 }
 
-.ar-med{
+.second-block {
+  position: relative;
+  height: 100%;
+}
+
+.third-block {
+  position: relative;
+  height: 90%;
+}
+
+.ar-med {
   font-family: Ar-Medium;
 }
 
-.ar-light{
+.ar-light {
   font-family: Ar-light;
 }
 
-.ar-bold{
+.ar-bold {
   font-family: Ar-Bold;
 }
 
@@ -49,7 +59,7 @@ body, html {
   margin-top: 0;
 }
 
-.ar-text{
+.ar-text {
   padding-top: 1% !important;
 }
 
@@ -59,6 +69,61 @@ body, html {
 
 .logo {
   height: 8.5vw;
+}
+
+.blok4 {
+  height: 45vw;
+  z-index: 9;
+  width: 108vw;
+  bottom: 57vw;
+  background: url(img/block_2/4.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.blok6 {
+  height: 67vw;
+  z-index: 1;
+  width: 141vw;
+  left: -5vw;
+  top: 0;
+  background: url(img/block_2/6.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.blok5 {
+   height: 67vw;
+   z-index: 1;
+   width: 141vw;
+   left: -5vw;
+   top: 0;
+   background: url(img/block_2/5.png) no-repeat center;
+   background-size: cover;
+   position: relative;
+ }
+
+.blok3 {
+  height: 16vw;
+  width: 50vw;
+  margin-top: 25vw;
+  left: 70vw;
+  bottom: 48vw;
+  z-index: 5;
+  background: url(img/block_1/3.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.blok3 {
+  height: 16vw;
+  width: 50vw;
+  margin-top: 25vw;
+  left: 70vw;
+  bottom: 48vw;
+  z-index: 5;
+  background: url(img/block_1/3.png) no-repeat center;
+  background-size: cover;
+  position: relative;
 }
 
 .blok1 {
@@ -110,39 +175,6 @@ body, html {
   position: relative;
 }
 
-.blok4 {
-  height: 51vw;
-  z-index: 9;
-  width: 100vw;
-  bottom: 57vw;
-  background: url(img/block_2/4.png) no-repeat center;
-  background-size: cover;
-  position: relative;
-
-}
-
-.blok5 {
-  height: 60vw;
-  z-index: 1;
-  width: 134vw;
-  left: -20px;
-  top: 0;
-  background: url(img/block_2/5.png) no-repeat center;
-  background-size: cover;
-  position: relative;
-}
-
-.blok6 {
-  height: 15vw;
-  width: 45vw;
-  margin-top: 30vw;
-  left: 70vw;
-  bottom: 48vw;
-  z-index: 5;
-  background: url(img/block_2/6.png) no-repeat center;
-  background-size: cover;
-  position: relative;
-}
 
 .arrow {
   display: flex;
@@ -172,6 +204,8 @@ body, html {
 
 .container {
   margin: 5%;
+  position: absolute;
+  bottom: 29vw;
 }
 
 .header {
@@ -222,8 +256,9 @@ body, html {
 .white {
   background: white;
   height: 100%;
-  position: relative;
+  position: absolute;
   z-index: 22;
+  bottom: 0vw;
 }
 
 .car {
@@ -405,10 +440,17 @@ body, html {
   padding-left: 5%;
 }
 
+.container-mar {
+  margin: 5%;
+}
+
 .car-third {
   height: 24%;
   background: url(img/block_3/hw124329.jpg) no-repeat center;
   background-size: cover;
+  position: absolute;
+  top: 77vw;
+  width: 100%;
 }
 
 .car-four {
@@ -458,6 +500,7 @@ body, html {
     height: 100%;
     color: white;
     margin-right: 6.5vw;
+
   }
 
   &__year {

@@ -94,15 +94,13 @@ export class HomePage {
     scy = '1';
 
     select = false;
-    wheel = false;
+    wheel = true;
     dimension = false;
     perfomance = false;
     @ViewChild(Content)
     content: Content;
     position = 0;
-    topCar = 57;
-    scyFirst = 5;
-    firstHeight = 83;
+
     carleft = '1';
     carRight = '1';
     url: any;
@@ -135,8 +133,14 @@ export class HomePage {
 
     sliderHistory = 20;
     sliderGallery = 20;
-    tapSecond = 5;
 
+    tapSecond = 5;
+    nexoTop = 7;
+    topCar = 57;
+    scyFirst = 5;
+    firstHeight = 83;
+    sliderCarPadding = 50;
+    secondBottom = 0;
 
     constructor(public el: ElementRef,
                 private inch17: Inch17,
@@ -152,7 +156,7 @@ export class HomePage {
 
     scrollToTop(pos) {
         pos = pos - this.position;
-        this.content.scrollByPoint(0, pos, 200);
+        this.content.scrollByPoint(0, pos, 500);
     }
 
     arabian() {
@@ -185,41 +189,56 @@ export class HomePage {
     onScroll(event) {
         console.log(event.detail.scrollTop);
         this.position = event.detail.scrollTop;
+        const raz = event.detail.scrollTop - this.lastPos;
+        this.lastPos = event.detail.scrollTop;
         this.getActiveItemMenu(event.detail.scrollTop);
-        if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
-            const raz = event.detail.scrollTop - this.lastPos;
-            this.lastPos = event.detail.scrollTop;
-            let height = event.detail.scrollTop;
-            height = raz * 0.030;
-            console.log(height);
+        if (event.detail.scrollTop > 0 && event.detail.scrollTop <= 133) {
+            const height = raz * 0.030;
+            this.nexoTop = this.nexoTop + height * 4;
             this.scyFirst = this.scyFirst + height;
-            this.firstHeight = this.firstHeight - height;
+            this.secondBottom = this.secondBottom + height * 5;
             this.topCar = this.topCar + height;
-            console.log('topCar' + this.topCar);
-            console.log('topCar' + this.firstHeight);
+        } else if (event.detail.scrollTop >= 133 && event.detail.scrollTop <= 255) {
+            const height = raz * 0.030;
+            if (event.detail.scrollTop >= 133 && event.detail.scrollTop <= 177) {
+                this.nexoTop = this.nexoTop + height * 4;
+                this.scyFirst = this.scyFirst + height;
+            }
+            this.secondBottom = this.secondBottom + height * 5;
+        } else if (event.detail.scrollTop >= 1358 && event.detail.scrollTop <= 2000) {
+            this.thirdCar = this.thirdCar + raz / 25;
+        } else if (event.detail.scrollTop >= 2000) {
+            this.thirdCar = 26;
+        } else if (event.detail.scrollTop > 500) {
+            this.sliderCarPadding = 5;
+            this.nexoTop = 27.52;
+            this.scyFirst = -10;
+            this.topCar = 62;
+            this.secondBottom = 37;
+            this.thirdCar = 1;
+        } else if (event.detail.scrollTop < 3) {
+            this.sliderCarPadding = 5;
+            this.nexoTop = 7;
+            this.scyFirst = -4;
+            this.topCar = 57;
+            this.secondBottom = 0;
+            this.thirdCar = 1;
+        } else if (event.detail.scrollTop >= 2000) {
+            this.thirdCar = 26;
         }
-        // } else if (event.detail.scrollTop > 500 && event.detail.scrollTop < 1500) {
-        //     this.lastPos = event.detail.scrollTop;
-        // } else if (event.detail.scrollTop >= 1500 && event.detail.scrollTop <= 1700) {
-        //     const raz = event.detail.scrollTop - this.lastPos;
-        //     this.lastPos = event.detail.scrollTop;
-        //     const height = raz * 0.030;
-        //     console.log(height);
-        //     this.thirdCar = this.thirdCar + height;
-        // }
-
     }
 
+    // 1358
     // 62,5 = 1px = 0.016vw;
 
 
     getActiveItemMenu(position) {
-        if (position >= 0 && position < 1600) {
+        if (position >= 0 && position < 1406) {
             this.home = true;
             this.heritage = false;
             this.table = false;
             this.footer = false;
-        } else if (position >= 1600 && position < 3400) {
+        } else if (position >= 1406 && position < 3400) {
             this.home = false;
             this.heritage = true;
             this.table = false;

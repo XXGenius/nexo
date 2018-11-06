@@ -18,14 +18,14 @@
                     <p class="text ar-med" *ngIf="ar">الصفحة الرئيسية</p>
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" (click)="scrollToTop(1836)">
+            <ion-col class="navbar__item" (click)="scrollToTop(1543)">
                 <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}"><p class="text"
                                                                                                        *ngIf="eng">
                     Heritage</p>
                     <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">إرثنا</p>
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3608)">
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3534)">
                 <div [ngClass]="{'active': table}"><p class="text" *ngIf="eng">Specification</p>
                     <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">المواصفات</p></div>
             </ion-col>
@@ -37,8 +37,8 @@
     </ion-grid>
 </ion-header>
 <ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)" style="padding: 0; margin: 0">
-    <div class="main" [style.height.%]="firstHeight" ion-fixed>
-        <div class="block-text">
+    <div class="main" ion-fixed>
+        <div class="block-text" [style.top.vw]="nexoTop">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
             <p *ngIf="ar" class="ar-med" style="margin: 0;">نكسو</p>
         </div>
@@ -46,259 +46,277 @@
         <div class="blok3"></div>
         <div class="blok1" [style.bottom.vw]="topCar"></div>
     </div>
-    <div class="white">
-        <div class="second" [style.magin.%]="tapSecond" (mouseup)="tapMouse()">
-            <div class="arrow" (click)="scrollToTop(797)">
-                <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
+    <div class="second-block">
+        <div class="white" [style.bottom.vw]="secondBottom">
+
+            <div class="second" [style.magin.%]="tapSecond" (mouseup)="tapMouse()">
+                <div class="arrow" (click)="scrollToTop(512)">
+                    <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
+                </div>
+                <div class="second__item">
+                    <div class="second__title">
+                        <p *ngIf="ar" class="ar-med" style="margin: 0;">الطريق نحو مستقبل أفضل
+                        </p>
+                        <p *ngIf="eng" style="margin: 0;">Driving to a cleaner future</p>
+                    </div>
+                    <div class="center">
+                        <div class="second__description">
+                            <p *ngIf="ar" class="ar-light">إن سيارة هيونداي نكسو الجديدة كلياً فريدة بالفعل ضمن السيارات
+                                العاملة بخلايا
+                                الوقود، فهي تجمع أحدث التقنيات بتصميم مستقبلي جذاب ومدى قيادة رائع حقاً.</p>
+                            <p *ngIf="eng">The All-New NEXO is a truly one-of-a-kind hydrogen fuel cell SUV that
+                                combines cutting-edge technology
+                                and futuristic design with fantastic driving range.</p>
+
+                        </div>
+                    </div>
+                    <ion-grid class="second__block">
+                        <ion-row>
+                            <ion-col>
+                                <div>
+                                    <img class="second__front-car" src="./assets/img/block_2/front.png" alt="">
+                                    <img (click)="showLeft()" class="plus-left" src="./assets/img/block_2/plus.png"
+                                         alt="">
+                                </div>
+                            </ion-col>
+                            <ion-col class="second__text">
+                                <div class="second__text-title">
+                                    <p *ngIf="ar" class="ar-med" style="margin-top: 0;">
+                                        مستوحاة من الطبيعة
+                                    </p>
+                                    <p *ngIf="eng" style="margin-top: 0;">
+                                        Inspired by nature
+                                    </p></div>
+                                <div class="second__line"></div>
+                                <div class="second__text-text">
+                                    <p class="ar-light" *ngIf="ar">تم تصميم نكسو الجديدة كلياً لتلفت الأنظار وتتميز عن
+                                        كل
+                                        السيارات في فئتها
+                                        بخطوطها الأيروديناميكية الأنيقة وشكلها الانسيابي المستوحى من تدفق المياه. </p>
+                                    <p *ngIf="eng"> With its clean aerodynamic lines,
+                                        the All-New NEXO has been sculpted to stand out with a streamlined look that
+                                        flows
+                                        elegantly like water – its only emission.</p>
+                                </div>
+                            </ion-col>
+                            <ion-col style="text-align: right;">
+                                <img class="second__back-car" src="./assets/img/block_2/back.png">
+                                <img (click)="showRight()" class="plus" src="./assets/img/block_2/plus.png">
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div [@carLeft]="carleft" class="second__left-car">
+                        <img (click)="closeLeft()" style="height: 4vw;position: absolute;top: 1.5vw;left: 1.6vw;"
+                             src="./assets/img/block_2/Close.png">
+                        <div>
+                            <div class="car__title">
+                                <p class="text" *ngIf="eng">Sleekly sculpted</p>
+                                <p class="text ar-med" *ngIf="ar">خطوط منحوتة بعناية</p>
+                            </div>
+                            <div class="car__text">
+                                <p class="text" *ngIf="eng">The All-New NEXO’s sleek
+                                    window line and floating roof
+                                    design add to the streamlined
+                                    look – expressive from
+                                    every angle.</p>
+                                <p class="text ar-light" *ngIf="ar">بتصميمها الديناميكي وخطوط شبابيكها التي يرتقي فوقها
+                                    السقف، سيسحرك
+                                    تصميم نكسو الجديدة كلياً من كل الزوايا.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div [@carRight]="carRight" class="second__right-car">
+                        <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 1.5vw;right: 1.6vw;"
+                             src="./assets/img/block_2/Close.png" alt="">
+                        <div>
+                            <div class="car__title-right" [style.right]="ar?'7vw':'20vw'">
+                                <p class="text" *ngIf="eng">Pure form</p>
+                                <p class="text ar-med" *ngIf="ar">مستقبلية بكل تفاصيلها</p></div>
+                            <div class="car__text-right">
+                                <p class="text" *ngIf="eng">NEXO’s clean,
+                                    progressive design
+                                    combines the very best of
+                                    aerodynamics, technology, and SUV
+                                    style into one impressively pure form.</p>
+                                <p class="text ar-light" *ngIf="ar">يجمع تصميم نكسو العصري الهندسة الأيروديناميكية
+                                    والتكنولوجيا بأفضل
+                                    ميزات
+                                    السيارت متعددة الاستعمالات، ليمنح السيارة صيغة مستقبلية مميزة.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="second__item">
-                <div class="second__title">
-                    <p *ngIf="ar" class="ar-med" style="    margin: 0;">الطريق نحو مستقبل أفضل
-                    </p>
-                    <p *ngIf="eng" style="    margin: 0;">Driving to a cleaner future</p>
+        </div>
+    </div>
+    <div class="third-block">
+        <div class="container">
+            <div class="box arrow" (click)="scrollToTop(1543)">
+                <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            </div>
+            <div class="delimeter"></div>
+            <div class="heritage">
+                <div class="heritage__title">
+                    <p *ngIf="eng" class="text">Heritage</p>
+                    <p *ngIf="ar" class="text ar-med">إرثنا</p>
                 </div>
                 <div class="center">
-                    <div class="second__description">
-                        <p *ngIf="ar" class="ar-light">إن سيارة هيونداي نكسو الجديدة كلياً فريدة بالفعل ضمن السيارات
-                            العاملة بخلايا
-                            الوقود، فهي تجمع أحدث التقنيات بتصميم مستقبلي جذاب ومدى قيادة رائع حقاً.</p>
-                        <p *ngIf="eng">The All-New NEXO is a truly one-of-a-kind hydrogen fuel cell SUV that
-                            combines cutting-edge technology
-                            and futuristic design with fantastic driving range.</p>
+                    <div class="heritage__text">
+                        <p *ngIf="eng" class="text"> The All-New NEXO not only embodies Hyundai’s commitment to advanced
+                            eco-friendly
+                            vehicle development
+                            –
+                            it also reinforces the company’s leadership
+                            in fuel cell electric vehicles (FCEV). Hyundai is a pioneer in fuel cell technology,
+                            beginning
+                            R&D
+                            for
+                            it in 1998. And in 2013, we pioneered the
+                            commercialisation of hydrogen fuel cell vehicles, bringing the ix35 Fuel Cell
+                            to market. Hyundai became
+                            the world's first carmaker with
+                            a mass production hydrogen fuel cell vehicle – an unprecedented
+                            endeavour in the automotive industry.</p>
+                        <p *ngIf="ar" class="text ar-light">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير
+                            السيارات
+                            الحديثة الصديقة
+                            للبيئة فقط، بل إنها تعزز أيضاً موقع الشركة القيادي في مجال السيارات الكهربائية العاملة
+                            بخلايا
+                            الوقود.
+                            تعد شركة هيونداي أحد رواد تكنولوجيا خلايا الوقود، حيث بدأت عمليات البحث والتطوير في عام 1998
+                            لتقود الإنتاج التجاري للسيارات العاملة بخلايا الوقود في عام 2013 بطرحها سيارة ix35 Fuel Cell
+                            في
+                            الأسواق، وتصبح بذلك أول مصنّع للسيارات في العالم يقوم بإنتاج السيارات العاملة بخلايا الوقود
+                            على
+                            نطاق واسع – وهو مسعى رائد وغير مسبوق في عالم صناعة السيارات.
+                        </p>
 
                     </div>
                 </div>
-                <ion-grid class="second__block">
-                    <ion-row>
-                        <ion-col>
-                            <div>
-                                <img class="second__front-car" src="./assets/img/block_2/front.png" alt="">
-                                <img (click)="showLeft()" class="plus-left" src="./assets/img/block_2/plus.png" alt="">
+
+            </div>
+            <ion-grid style="padding-top: 5.5vw;padding-bottom: 1.1vw;">
+                <ion-row>
+                    <ion-col align-self-center>
+                        <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                                 src="./assets/img/block_3/first.png" alt=""></div>
+                    </ion-col>
+                    <ion-col align-self-center>
+                        <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                                 src="./assets/img/block_3/second.png" alt=""></div>
+                    </ion-col>
+                    <ion-col align-self-center>
+                        <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                                 src="./assets/img/block_3/third.png" alt=""></div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtitle">
+                                <p *ngIf="eng" class="text">World’s 1st mass
+                                    production FCEV vehicle</p>
+                                <p *ngIf="ar" class="text ar-med">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني
+                                    في
+                                    العالم</p>
                             </div>
-                        </ion-col>
-                        <ion-col class="second__text">
-                            <div class="second__text-title">
-                                <p *ngIf="ar" class="ar-med" style="margin-top: 0;">
-                                    مستوحاة من الطبيعة
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtitle"><p *ngIf="eng" class="text">Most fuel cell <br>
+                                vehicles sold</p>
+                                <p *ngIf="ar" class="text ar-med">
+                                    أكبر مبيعات للسيارات العاملة بخلايا الوقود الهيدروجيني في العالم
                                 </p>
-                                <p *ngIf="eng" style="margin-top: 0;">
-                                    Inspired by nature
-                                </p></div>
-                            <div class="second__line"></div>
-                            <div class="second__text-text">
-                                <p class="ar-light" *ngIf="ar">تم تصميم نكسو الجديدة كلياً لتلفت الأنظار وتتميز عن كل
-                                    السيارات في فئتها
-                                    بخطوطها الأيروديناميكية الأنيقة وشكلها الانسيابي المستوحى من تدفق المياه. </p>
-                                <p *ngIf="eng"> With its clean aerodynamic lines,
-                                    the All-New NEXO has been sculpted to stand out with a streamlined look that flows
-                                    elegantly like water – its only emission.</p>
                             </div>
-                        </ion-col>
-                        <ion-col style="text-align: right;">
-                            <img class="second__back-car" src="./assets/img/block_2/back.png">
-                            <img (click)="showRight()" class="plus" src="./assets/img/block_2/plus.png">
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
-                <div [@carLeft]="carleft" class="second__left-car">
-                    <img (click)="closeLeft()" style="height: 4vw;position: absolute;top: 1.5vw;left: 1.6vw;"
-                         src="./assets/img/block_2/Close.png">
-                    <div>
-                        <div class="car__title">
-                            <p class="text" *ngIf="eng">Sleekly sculpted</p>
-                            <p class="text ar-med" *ngIf="ar">خطوط منحوتة بعناية</p>
                         </div>
-                        <div class="car__text">
-                            <p class="text" *ngIf="eng">The All-New NEXO’s sleek
-                                window line and floating roof
-                                design add to the streamlined
-                                look – expressive from
-                                every angle.</p>
-                            <p class="text ar-light" *ngIf="ar">بتصميمها الديناميكي وخطوط شبابيكها التي يرتقي فوقها
-                                السقف، سيسحرك
-                                تصميم نكسو الجديدة كلياً من كل الزوايا.</p>
+                    </ion-col>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtitle">
+                                <p *ngIf="eng" class="text">
+                                    Sustained commitment
+                                    to the environment
+                                </p>
+                                <p *ngIf="ar" class="text ar-med">التزام مستدام بسلامة البيئة</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div [@carRight]="carRight" class="second__right-car">
-                    <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 1.5vw;right: 1.6vw;"
-                         src="./assets/img/block_2/Close.png" alt="">
-                    <div>
-                        <div class="car__title-right" [style.right]="ar?'7vw':'20vw'">
-                            <p class="text" *ngIf="eng">Pure form</p>
-                            <p class="text ar-med" *ngIf="ar">مستقبلية بكل تفاصيلها</p></div>
-                        <div class="car__text-right">
-                            <p class="text" *ngIf="eng">NEXO’s clean,
-                                progressive design
-                                combines the very best of
-                                aerodynamics, technology, and SUV
-                                style into one impressively pure form.</p>
-                            <p class="text ar-light" *ngIf="ar">يجمع تصميم نكسو العصري الهندسة الأيروديناميكية
-                                والتكنولوجيا بأفضل
-                                ميزات
-                                السيارت متعددة الاستعمالات، ليمنح السيارة صيغة مستقبلية مميزة.</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtext"><p *ngIf="eng" class="text">In 2013, the ix35
+                                Fuel Cell became
+                                the world’s first mass-produced
+                                hydrogen-powered vehicle.</p>
+                                <p *ngIf="ar" class="text ar-light">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة
+                                    العاملة
+                                    بخلايا الوقود
+                                    الهيدروجيني الأولى في العالم التي يتم تصنيعها على نطاق تجاري واسع.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="box arrow" (click)="scrollToTop(1830)">
-            <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
-        </div>
-        <div class="delimeter"></div>
-        <div class="heritage">
-            <div class="heritage__title">
-                <p *ngIf="eng" class="text">Heritage</p>
-                <p *ngIf="ar" class="text ar-med">إرثنا</p>
-            </div>
-            <div class="center">
-                <div class="heritage__text">
-                    <p *ngIf="eng" class="text"> The All-New NEXO not only embodies Hyundai’s commitment to advanced
-                        eco-friendly
-                        vehicle development
-                        –
-                        it also reinforces the company’s leadership
-                        in fuel cell electric vehicles (FCEV). Hyundai is a pioneer in fuel cell technology, beginning
-                        R&D
-                        for
-                        it in 1998. And in 2013, we pioneered the
-                        commercialisation of hydrogen fuel cell vehicles, bringing the ix35 Fuel Cell
-                        to market. Hyundai became
-                        the world's first carmaker with
-                        a mass production hydrogen fuel cell vehicle – an unprecedented
-                        endeavour in the automotive industry.</p>
-                    <p *ngIf="ar" class="text ar-light">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير
-                        السيارات
-                        الحديثة الصديقة
-                        للبيئة فقط، بل إنها تعزز أيضاً موقع الشركة القيادي في مجال السيارات الكهربائية العاملة بخلايا
-                        الوقود.
-                        تعد شركة هيونداي أحد رواد تكنولوجيا خلايا الوقود، حيث بدأت عمليات البحث والتطوير في عام 1998
-                        لتقود الإنتاج التجاري للسيارات العاملة بخلايا الوقود في عام 2013 بطرحها سيارة ix35 Fuel Cell في
-                        الأسواق، وتصبح بذلك أول مصنّع للسيارات في العالم يقوم بإنتاج السيارات العاملة بخلايا الوقود على
-                        نطاق واسع – وهو مسعى رائد وغير مسبوق في عالم صناعة السيارات.
-                    </p>
-
-                </div>
-            </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtext"><p *ngIf="eng" class="text">As of 2017, 500 Hyundai fuel cell
+                                vehicles have
+                                been registered
+                                in
+                                Europe. That is more than
+                                all
+                                other brands combined. Hyundai sells them in 18 countries around the world, 13 of which
+                                are
+                                in
+                                Europe.</p>
+                                <p *ngIf="ar" class="text ar-light">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا
+                                    الوقود
+                                    المسجلة
+                                    في أوروبا 500
+                                    سيارة، وهو رقم أكبر من كافة مبيعات الشركات الأخرى مجتمعة. تقوم هيونداي حالياً ببيع
+                                    سياراتها العاملة بخلايا الوقود الهيدروجيني في 118 دولة، منها 13 في القارة
+                                    الأوروبية.</p>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="container-sub">
+                            <div class="heritage__subtext">
+                                <p *ngIf="eng" class="text">Hyundai Motor Company has been dedicated to the development
+                                    of
+                                    Fuel
+                                    Cell Vehicles since 1998.
+                                    We
+                                    are committed to fully playing our role as the global brand leader in eco-friendly
+                                    technology.</p>
+                                <p *ngIf="ar" class="text ar-light">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات
+                                    العاملة
+                                    بخلايا الوقود في
+                                    عام 1998، ونحن ملتزمون بلعب دورنا كشركة السيارات الأولى عالمياً في تطوير التكنولوجيا
+                                    الصديقة للبيئة.</p>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
         </div>
-        <ion-grid style="padding-top: 5.5vw;padding-bottom: 1.1vw;">
-            <ion-row>
-                <ion-col align-self-center>
-                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
-                                             src="./assets/img/block_3/first.png" alt=""></div>
-                </ion-col>
-                <ion-col align-self-center>
-                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
-                                             src="./assets/img/block_3/second.png" alt=""></div>
-                </ion-col>
-                <ion-col align-self-center>
-                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
-                                             src="./assets/img/block_3/third.png" alt=""></div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtitle">
-                            <p *ngIf="eng" class="text">World’s 1st mass
-                                production FCEV vehicle</p>
-                            <p *ngIf="ar" class="text ar-med">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني في
-                                العالم</p>
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtitle"><p *ngIf="eng" class="text">Most fuel cell <br>
-                            vehicles sold</p>
-                            <p *ngIf="ar" class="text ar-med">
-                                أكبر مبيعات للسيارات العاملة بخلايا الوقود الهيدروجيني في العالم
-                            </p>
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtitle">
-                            <p *ngIf="eng" class="text">
-                                Sustained commitment
-                                to the environment
-                            </p>
-                            <p *ngIf="ar" class="text ar-med">التزام مستدام بسلامة البيئة</p>
-                        </div>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtext"><p *ngIf="eng" class="text">In 2013, the ix35
-                            Fuel Cell became
-                            the world’s first mass-produced
-                            hydrogen-powered vehicle.</p>
-                            <p *ngIf="ar" class="text ar-light">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة
-                                العاملة
-                                بخلايا الوقود
-                                الهيدروجيني الأولى في العالم التي يتم تصنيعها على نطاق تجاري واسع.</p>
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtext"><p *ngIf="eng" class="text">As of 2017, 500 Hyundai fuel cell
-                            vehicles have
-                            been registered
-                            in
-                            Europe. That is more than
-                            all
-                            other brands combined. Hyundai sells them in 18 countries around the world, 13 of which are
-                            in
-                            Europe.</p>
-                            <p *ngIf="ar" class="text ar-light">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا الوقود
-                                المسجلة
-                                في أوروبا 500
-                                سيارة، وهو رقم أكبر من كافة مبيعات الشركات الأخرى مجتمعة. تقوم هيونداي حالياً ببيع
-                                سياراتها العاملة بخلايا الوقود الهيدروجيني في 118 دولة، منها 13 في القارة الأوروبية.</p>
-                        </div>
-                    </div>
-                </ion-col>
-                <ion-col>
-                    <div class="container-sub">
-                        <div class="heritage__subtext">
-                            <p *ngIf="eng" class="text">Hyundai Motor Company has been dedicated to the development of
-                                Fuel
-                                Cell Vehicles since 1998.
-                                We
-                                are committed to fully playing our role as the global brand leader in eco-friendly
-                                technology.</p>
-                            <p *ngIf="ar" class="text ar-light">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات
-                                العاملة
-                                بخلايا الوقود في
-                                عام 1998، ونحن ملتزمون بلعب دورنا كشركة السيارات الأولى عالمياً في تطوير التكنولوجيا
-                                الصديقة للبيئة.</p>
-                        </div>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+        <div class="car-third" [style.height.%]="thirdCar">
+        </div>
+    </div>
 
-    </div>
-    <div class="car-third" [style.height.%]="thirdCar">
-    </div>
     <div class="car-four">
         <div class="arrow">
-            <img (click)="scrollToTop(2770)" class="arrow__img" src="./assets/img/arrow.png">
+            <img (click)="scrollToTop(2495)" class="arrow__img" src="./assets/img/arrow.png">
         </div>
         <div class="line-left"></div>
-        <div style="position: relative;height: 90vw;">
+        <div style="position: relative;height: 95vw;" [style.padding-left.%]="sliderCarPadding">
             <div class="slide-car" (scroll)="onScrollY($event)">
 
                 <div class="slide-car__item-top">
@@ -517,11 +535,11 @@
             </div>
         </div>
     </div>
-    <div class="container table">
+    <div class="container-mar table">
         <div class="arrow" style="    padding-bottom: 0;">
-            <img (click)="scrollToTop(3608)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            <img (click)="scrollToTop(3534)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
-        <div class="delimeter container"></div>
+        <div class="delimeter container-mar"></div>
         <div class="specification">
             <div class="specification__title">
                 Specification
