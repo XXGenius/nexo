@@ -15,23 +15,23 @@
             <ion-col class="navbar__item" (click)="scrollToTop(0)">
                 <div class="active" [ngClass]="{'active': home}">
                     <p class="text" *ngIf="eng">Home</p>
-                    <p class="text"  *ngIf="ar">الصفحة الرئيسية</p>
+                    <p class="text ar-med" *ngIf="ar">الصفحة الرئيسية</p>
                 </div>
             </ion-col>
             <ion-col class="navbar__item" (click)="scrollToTop(1836)">
                 <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}"><p class="text"
                                                                                                        *ngIf="eng">
                     Heritage</p>
-                    <p class="text" style="padding-left: 3vw" *ngIf="ar">إرثنا</p>
+                    <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">إرثنا</p>
                 </div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3608)">
                 <div [ngClass]="{'active': table}"><p class="text" *ngIf="eng">Specification</p>
-                    <p class="text" style="padding-left: 3vw" *ngIf="ar">المواصفات</p></div>
+                    <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">المواصفات</p></div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(4500)">
                 <div [ngClass]="{'active': footer}"><p class="text" *ngIf="eng">Exterior&Interior</p>
-                    <p class="text" *ngIf="ar">التصميم الخارجي والداخلي</p></div>
+                    <p class="text ar-med" *ngIf="ar">التصميم الخارجي والداخلي</p></div>
             </ion-col>
         </ion-row>
     </ion-grid>
@@ -40,26 +40,27 @@
     <div class="main" [style.height.%]="firstHeight" ion-fixed>
         <div class="block-text">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
-            <p *ngIf="ar" style="margin: 0;">نكسو</p>
+            <p *ngIf="ar" class="ar-med" style="margin: 0;">نكسو</p>
         </div>
         <div class="blok2" [style.left.vw]="'-' + scyFirst"></div>
         <div class="blok3"></div>
         <div class="blok1" [style.bottom.vw]="topCar"></div>
     </div>
     <div class="white">
-        <div class="second">
+        <div class="second" [style.magin.%]="tapSecond" (mouseup)="tapMouse()">
             <div class="arrow" (click)="scrollToTop(797)">
                 <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
             </div>
             <div class="second__item">
                 <div class="second__title">
-                    <p *ngIf="ar" style="    margin: 0;">الطريق نحو مستقبل أفضل
+                    <p *ngIf="ar" class="ar-med" style="    margin: 0;">الطريق نحو مستقبل أفضل
                     </p>
                     <p *ngIf="eng" style="    margin: 0;">Driving to a cleaner future</p>
                 </div>
                 <div class="center">
                     <div class="second__description">
-                        <p *ngIf="ar">إن سيارة هيونداي نكسو الجديدة كلياً فريدة بالفعل ضمن السيارات العاملة بخلايا
+                        <p *ngIf="ar" class="ar-light">إن سيارة هيونداي نكسو الجديدة كلياً فريدة بالفعل ضمن السيارات
+                            العاملة بخلايا
                             الوقود، فهي تجمع أحدث التقنيات بتصميم مستقبلي جذاب ومدى قيادة رائع حقاً.</p>
                         <p *ngIf="eng">The All-New NEXO is a truly one-of-a-kind hydrogen fuel cell SUV that
                             combines cutting-edge technology
@@ -77,7 +78,7 @@
                         </ion-col>
                         <ion-col class="second__text">
                             <div class="second__text-title">
-                                <p *ngIf="ar" style="margin-top: 0;">
+                                <p *ngIf="ar" class="ar-med" style="margin-top: 0;">
                                     مستوحاة من الطبيعة
                                 </p>
                                 <p *ngIf="eng" style="margin-top: 0;">
@@ -85,7 +86,8 @@
                                 </p></div>
                             <div class="second__line"></div>
                             <div class="second__text-text">
-                                <p *ngIf="ar">تم تصميم نكسو الجديدة كلياً لتلفت الأنظار وتتميز عن كل السيارات في فئتها
+                                <p class="ar-light" *ngIf="ar">تم تصميم نكسو الجديدة كلياً لتلفت الأنظار وتتميز عن كل
+                                    السيارات في فئتها
                                     بخطوطها الأيروديناميكية الأنيقة وشكلها الانسيابي المستوحى من تدفق المياه. </p>
                                 <p *ngIf="eng"> With its clean aerodynamic lines,
                                     the All-New NEXO has been sculpted to stand out with a streamlined look that flows
@@ -104,7 +106,7 @@
                     <div>
                         <div class="car__title">
                             <p class="text" *ngIf="eng">Sleekly sculpted</p>
-                            <p class="text" *ngIf="ar">خطوط منحوتة بعناية</p>
+                            <p class="text ar-med" *ngIf="ar">خطوط منحوتة بعناية</p>
                         </div>
                         <div class="car__text">
                             <p class="text" *ngIf="eng">The All-New NEXO’s sleek
@@ -112,7 +114,8 @@
                                 design add to the streamlined
                                 look – expressive from
                                 every angle.</p>
-                            <p class="text" *ngIf="ar">بتصميمها الديناميكي وخطوط شبابيكها التي يرتقي فوقها السقف، سيسحرك
+                            <p class="text ar-light" *ngIf="ar">بتصميمها الديناميكي وخطوط شبابيكها التي يرتقي فوقها
+                                السقف، سيسحرك
                                 تصميم نكسو الجديدة كلياً من كل الزوايا.</p>
                         </div>
                     </div>
@@ -121,16 +124,17 @@
                     <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 1.5vw;right: 1.6vw;"
                          src="./assets/img/block_2/Close.png" alt="">
                     <div>
-                        <div class="car__title-right">
+                        <div class="car__title-right" [style.right]="ar?'7vw':'20vw'">
                             <p class="text" *ngIf="eng">Pure form</p>
-                            <p class="text" *ngIf="ar">مستقبلية بكل تفاصيلها</p></div>
+                            <p class="text ar-med" *ngIf="ar">مستقبلية بكل تفاصيلها</p></div>
                         <div class="car__text-right">
                             <p class="text" *ngIf="eng">NEXO’s clean,
                                 progressive design
                                 combines the very best of
                                 aerodynamics, technology, and SUV
                                 style into one impressively pure form.</p>
-                            <p class="text" *ngIf="ar">يجمع تصميم نكسو العصري الهندسة الأيروديناميكية والتكنولوجيا بأفضل
+                            <p class="text ar-light" *ngIf="ar">يجمع تصميم نكسو العصري الهندسة الأيروديناميكية
+                                والتكنولوجيا بأفضل
                                 ميزات
                                 السيارت متعددة الاستعمالات، ليمنح السيارة صيغة مستقبلية مميزة.</p>
                         </div>
@@ -148,7 +152,7 @@
         <div class="heritage">
             <div class="heritage__title">
                 <p *ngIf="eng" class="text">Heritage</p>
-                <p *ngIf="ar" class="text">إرثنا</p>
+                <p *ngIf="ar" class="text ar-med">إرثنا</p>
             </div>
             <div class="center">
                 <div class="heritage__text">
@@ -166,7 +170,8 @@
                         the world's first carmaker with
                         a mass production hydrogen fuel cell vehicle – an unprecedented
                         endeavour in the automotive industry.</p>
-                    <p *ngIf="ar" class="text">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير السيارات
+                    <p *ngIf="ar" class="text ar-light">لا تمثل سيارة نكسو الجديدة كلياً التزام شركة هيونداي بتطوير
+                        السيارات
                         الحديثة الصديقة
                         للبيئة فقط، بل إنها تعزز أيضاً موقع الشركة القيادي في مجال السيارات الكهربائية العاملة بخلايا
                         الوقود.
@@ -203,7 +208,7 @@
                         <div class="heritage__subtitle">
                             <p *ngIf="eng" class="text">World’s 1st mass
                                 production FCEV vehicle</p>
-                            <p *ngIf="ar" class="text">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني في
+                            <p *ngIf="ar" class="text ar-med">أول مصنّع للسيارات العاملة بخلايا الوقود الهيدروجيني في
                                 العالم</p>
                         </div>
                     </div>
@@ -212,7 +217,7 @@
                     <div class="container-sub">
                         <div class="heritage__subtitle"><p *ngIf="eng" class="text">Most fuel cell <br>
                             vehicles sold</p>
-                            <p *ngIf="ar" class="text">
+                            <p *ngIf="ar" class="text ar-med">
                                 أكبر مبيعات للسيارات العاملة بخلايا الوقود الهيدروجيني في العالم
                             </p>
                         </div>
@@ -225,7 +230,7 @@
                                 Sustained commitment
                                 to the environment
                             </p>
-                            <p *ngIf="ar" class="text">التزام مستدام بسلامة البيئة</p>
+                            <p *ngIf="ar" class="text ar-med">التزام مستدام بسلامة البيئة</p>
                         </div>
                     </div>
                 </ion-col>
@@ -239,7 +244,8 @@
                             Fuel Cell became
                             the world’s first mass-produced
                             hydrogen-powered vehicle.</p>
-                            <p *ngIf="ar" class="text">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة العاملة
+                            <p *ngIf="ar" class="text ar-light">في عام 2013 طرحنا سيارة ix35 Fuel Cell لتكون السيارة
+                                العاملة
                                 بخلايا الوقود
                                 الهيدروجيني الأولى في العالم التي يتم تصنيعها على نطاق تجاري واسع.</p>
                         </div>
@@ -256,7 +262,8 @@
                             other brands combined. Hyundai sells them in 18 countries around the world, 13 of which are
                             in
                             Europe.</p>
-                            <p *ngIf="ar" class="text">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا الوقود المسجلة
+                            <p *ngIf="ar" class="text ar-light">في عام 2013 وصل عدد سيارات هيونداي العاملة بخلايا الوقود
+                                المسجلة
                                 في أوروبا 500
                                 سيارة، وهو رقم أكبر من كافة مبيعات الشركات الأخرى مجتمعة. تقوم هيونداي حالياً ببيع
                                 سياراتها العاملة بخلايا الوقود الهيدروجيني في 118 دولة، منها 13 في القارة الأوروبية.</p>
@@ -272,7 +279,8 @@
                                 We
                                 are committed to fully playing our role as the global brand leader in eco-friendly
                                 technology.</p>
-                            <p *ngIf="ar" class="text">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات العاملة
+                            <p *ngIf="ar" class="text ar-light">بدأت شركة هيونداي للسيارات التزامها بتطوير السيارات
+                                العاملة
                                 بخلايا الوقود في
                                 عام 1998، ونحن ملتزمون بلعب دورنا كشركة السيارات الأولى عالمياً في تطوير التكنولوجيا
                                 الصديقة للبيئة.</p>
@@ -297,10 +305,10 @@
                     <div class="slide-car__item-top">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">1998</div>
-                        <div class="slide-car__title"><p *ngIf="eng" class="text">Launch of fuel cell development</p>
-                            <p *ngIf="ar" class="text">إطلاق برنامج تطوير <br> خلايا الوقود</p></div>
+                        <div class="slide-car__title"><p class="text">Launch of fuel cell development</p>
+                        </div>
                         <div class="slide-car__description bottom">
-                            <p *ngIf="eng" class="text"> Hyundai Motor has been at the forefront of hydrogen vehicle
+                            <p class="text"> Hyundai Motor has been at the forefront of hydrogen vehicle
                                 development
                                 for over two
                                 decades
@@ -309,10 +317,6 @@
                                 for fuel cell technology <br>
                                 in 1998.</p>
 
-                            <p *ngIf="ar" class="ar" class="text">إطلاق برنامج تطوير خلايا الوقود
-                                ما زالت شركة هيونداي للسيارات في مركز الصدارة لتطوير السيارات العاملة بخلايا الوقود
-                                لأكثر من عقدين من الزمن، حيث أطلقت برنامجها للبحث وتطوير تكنولوجيا خلايا الوقود في عام
-                                1998.</p>
                         </div>
                         <img style="padding-top: 1vw" src="./assets/img/block_4/1.png">
                     </div>
@@ -322,23 +326,16 @@
                         <img class="top-image" src="./assets/img/block_4/2.png">
                         <div class="slide-car__year  top">2002</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p *ngIf="eng" class="text">75kW Santa Fe FCEV</p>
-                            <p *ngIf="ar">سانتافيه العاملة بخلايا الوقود بقدرة 75 كيلوواط</p></div>
+                        <div class="slide-car__title"><p class="text">75kW Santa Fe FCEV</p>
+                        </div>
                         <div class="slide-car__description">
 
-                            <ul *ngIf="eng" style="padding: 0 0 0 2vw;margin: 0;" class="text">
+                            <ul style="padding: 0 0 0 2vw;margin: 0;" class="text">
                                 <li>Base model: Santa Fe SM</li>
                                 <li> Operating range: 230 km</li>
                                 <li> Fuel cell power output: 75 kW</li>
                                 <li> Note: Inclusion of battery pack for
                                     improved range and efficiency.
-                                </li>
-                            </ul>
-                            <ul *ngIf="ar" style="padding: 0 0 0 2vw;margin: 0;">
-                                <li>الموديل الأساسي: سانتافيه SM</li>
-                                <li> مدى القيادة: 230 كم</li>
-                                <li> القدرة الكهربائية لخلية الوقود: 75 كيلوواط</li>
-                                <li> ملاحظة: تتضمن السيارة بطارية إضافية لتحسين مدى القيادة والكفاءة.
                                 </li>
                             </ul>
                         </div>
@@ -348,10 +345,10 @@
                     <div class="slide-car__item-top bottom-image" style="padding-top: 12% !important;">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2004</div>
-                        <div class="slide-car__title"><p *ngIf="eng" class="text">80kW Tucson FCEV</p>
-                            <p *ngIf="ar" class="text">توسون العاملة بخلايا الوقود بقدرة 80 كيلوواط</p></div>
-                        <div class="slide-car__description bottom" [style.height.vw]="ar ? '14' : '18'">
-                            <p *ngIf="eng" class="text">US DOE FCEV demonstration
+                        <div class="slide-car__title"><p class="text">80kW Tucson FCEV</p>
+                        </div>
+                        <div class="slide-car__description bottom">
+                            <p class="text">US DOE FCEV demonstration
                                 [2004-2009]
 
                                 Hyundai also participated in the
@@ -359,10 +356,7 @@
                                 program led by the U.S. Department
                                 of
                                 Energy between 2004 and 2009.</p>
-                            <p *ngIf="ar" class="text">
-                                شاركت هيونداي أيضاً بالبرنامج التجريبي في أمريكا الشمالية للسيارات العاملة بخلايا الوقود
-                                الذي قادته وزارة الطاقة الأمريكية بين عامي 2004 و 2009.
-                            </p>
+
                         </div>
                         <img src="./assets/img/block_4/3.png">
                     </div>
@@ -372,24 +366,14 @@
                         <img class="top-image" src="./assets/img/block_4/4.png">
                         <div class="slide-car__year top">2006</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">1st Generation fuel cell bus</p>
-                            <p class="text" *ngIf="ar">الجيل الأول من الحافلات العاملة بخلايا الوقود</p></div>
+                        <div class="slide-car__title"><p class="text">1st Generation fuel cell bus</p>
+                        </div>
                         <div class="slide-car__description ">
-                            <p class="text" *ngIf="eng">Hyundai has been operating an
+                            <p class="text">Hyundai has been operating an
                                 FCEV demonstration program in
                                 collaboration with the Korean
                                 government since 2006.</p>
-                            <p class="text" *ngIf="ar">
-                                بدأت هيونداي منذ العام 2006 بتشغيل برنامج توضيحي للمركبات العاملة بخلايا الوقود بالتعاون
-                                مع الحكومة الكورية.
-                            </p>
-                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
-                                <li> مدى القيادة للحافلة: 380 كم</li>
-                                <li>القدرة الكهربائية لخلية الوقود: 160 كيلوواط</li>
-                                <li>ملاحظة: تم تشغيل هذه الحافلة واستخدامها في ألمانيا خلال دورة كأس العالم 2006.
-                                </li>
-                            </ul>
-                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li> Bus operating range: 380 km</li>
                                 <li> Fuel cell power output: 160 kW</li>
                                 <li>Note: Operated in Germany during
@@ -401,27 +385,21 @@
                     </div>
                 </div>
                 <div class="slide-car__item-top">
-                    <div class="slide-car__item-top bottom-image" [ngClass]="{'ar-text': ar}">
+                    <div class="slide-car__item-top bottom-image">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2007</div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">100kW Tucson FCEV</p>
-                            <p class="text" *ngIf="ar">سانتافيه العاملة بخلايا الوقود بقدرة 100 كيلوواط</p></div>
+                        <div class="slide-car__title"><p class="text">100kW Tucson FCEV</p>
+                        </div>
                         <div class="slide-car__description bottom">
-                            <p class="text" *ngIf="eng">Further development of FCEV
+                            <p class="text">Further development of FCEV
                                 powertrain.</p>
-                            <p class="text" *ngIf="ar">إضافات وتطويرات جديدة لآلية الحركة العاملة بخلايا الوقود.</p>
-                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
+
+                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 370 km</li>
                                 <li> Fuel cell power output: 100 kW</li>
                                 <li>Note: Equipped with Hyundai's
                                     in-house developed
                                     electric drivetrain.
-                                </li>
-                            </ul>
-                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
-                                <li>مدى القيادة: 370 كم</li>
-                                <li>القدرة الكهربائية لخلية الوقود: 100 كيلوواط</li>
-                                <li>ملاحظة: مزودة بآلية دفع كهربائي في محلياً في هيونداي.
                                 </li>
                             </ul>
                         </div>
@@ -433,16 +411,15 @@
                         <img class="top-image" src="./assets/img/block_4/6.png">
                         <div class="slide-car__year top">2009</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">2nd Generation fuel cell bus</p>
-                            <p class="text" *ngIf="ar">الجيل الثاني من الحافلات العاملة بخلايا الوقود </p></div>
+                        <div class="slide-car__title"><p class="text">2nd Generation fuel cell bus</p>
+                        </div>
                         <div class="slide-car__description ">
-                            <p class="text" *ngIf="eng">The FCEV demonstration program was
+                            <p class="text">The FCEV demonstration program was
                                 launched in 2009 in Korea, in Seoul
                                 and Ulsan and was successfully
                                 completed in 2013.</p>
-                            <p class="text" *ngIf="ar">تم إطلاق البرنامج التوضيحي للمركبات العاملة بخلايا الوقود في
-                                مدينتي سيؤول وأولسان في كوريا عام 2009، وانتهى بنجاح في عام 2013</p>
-                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
+
+                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li> Operating range: 380 km</li>
                                 <li>Fuel cell power output: 200 kW</li>
                                 <li>
@@ -450,36 +427,21 @@
                                     Yeosu Expo 2012.
                                 </li>
                             </ul>
-                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
-                                <li> مدى القيادة للحافلة: 380 كم</li>
-                                <li>القدرة الكهربائية لخلية الوقود: 200 كيلوواط</li>
-                                <li>
-                                    ملاحظة: تم تشغيل هذه الحافلة واستخدامها في كوريا خلال معرض يوسو عام 2012.
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="slide-car__item-top">
-                    <div class="slide-car__item-top bottom-image" [ngClass]="{'ar-text': ar}">
+                    <div class="slide-car__item-top bottom-image">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2013</div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">100kw ix35 FCEV</p>
-                            <p class="text" *ngIf="ar">سيارة ix35 العاملة بخلايا الوقود بقدرة 100 كيلوواط</p></div>
+                        <div class="slide-car__title"><p class="text">100kw ix35 FCEV</p>
+                        </div>
                         <div class="slide-car__description bottom">
-                            <p class="text" *ngIf="eng"> World’s 1st Mass- produced FCEV.</p>
-                            <p class="text" *ngIf="ar">السيارة العاملة بخلايا الوقود الأولى في العالم اتي يتم تصنيعها
-                                على نظاق تجاري واسع.</p>
-                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <p class="text"> World’s 1st Mass- produced FCEV.</p>
+                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 594 km (NEDC)</li>
                                 <li>
                                     Fuel cell power output: 100 kW.
-                                </li>
-                            </ul>
-                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
-                                <li>مدى القيادة: 594 كم.</li>
-                                <li>
-                                    القدرة الكهربائية لخلية الوقود: 100 كيلوواط.
                                 </li>
                             </ul>
                         </div>
@@ -491,23 +453,17 @@
                         <img class="top-image" src="./assets/img/block_4/8.png">
                         <div class="slide-car__year top">2015</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">Intrado fuel cell concept</p>
-                            <p class="text" *ngIf="ar">سيارة إنترادو النموذجية العاملة بخلايا الوقود </p></div>
+                        <div class="slide-car__title"><p class="text">Intrado fuel cell concept</p>
+                        </div>
                         <div class="slide-car__description ">
-                            <p class="text" *ngIf="eng">The Hyundai Intrado concept car
+                            <p class="text">The Hyundai Intrado concept car
                                 premiered at the 2014 Geneva
                                 Motor Show. The SUV/crossover has
                                 a
                                 carbon-fibre central structure and
                                 utilises a Li-ion 36 kW battery.</p>
-                            <p class="text" *ngIf="ar">تم عرض سيارة إنترادو النموذجية لأول مرة في معرض جنيف الدولي
-                                للسيارات عام 2014. وتتميز هذه السيارة ببنيتها المركزية المصنوعة من نسيج الكربون
-                                وبطاريتها من نوع Li-ion بقدرة 36 كيلو واط. </p>
-                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 600 km.</li>
-                            </ul>
-                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
-                                <li>مدى القيادة: 600 كم.</li>
                             </ul>
                         </div>
                     </div>
@@ -516,20 +472,16 @@
                     <div class="slide-car__item-top">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2017</div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">The FE Concept</p>
-                            <p class="text" *ngIf="ar">سيارة FE النموذجية</p></div>
+                        <div class="slide-car__title"><p class="text">The FE Concept</p>
+                        </div>
                         <div class="slide-car__description bottom">
-                            <p class="text" *ngIf="eng"> The FE Concept showcases Hyundai
+                            <p class="text"> The FE Concept showcases Hyundai
                                 Motor’s 4th generation hydrogen fuel
                                 cell technology, an evolution of
                                 research, development and real-world
                                 evaluation programs around the world.
                                 Supports the Icelandic
                                 H2ME Initiative.</p>
-                            <p class="text " *ngIf="ar">تمثّل سيارة FE النموذجية الجيلَ الرابع من سيارات هيونداي العاملة
-                                بتكنولوجيا خلايا الوقود، وتعرض التطورات في الأبحاث والمستجدات في برامج التقييم حول
-                                العالم. هذا وتدعم السيارة النموذجية مبادرة النقل بالهيدروجين في أوروبا H2ME.</p>
-
                         </div>
                         <img style="padding-top:4vw;" src="./assets/img/block_4/9.png">
                     </div>
@@ -539,11 +491,10 @@
                         <img class="top-image" src="./assets/img/block_4/10.png">
                         <div class="slide-car__year top">2018</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title"><p class="text" *ngIf="eng">Launch of 2nd-gen FCEV, NEXO</p>
-                            <p class="text" *ngIf="ar">إطلاق الجيل الثاني من سيارات هيونداي العاملة بخلايا الوقود،
-                                نكسو</p></div>
+                        <div class="slide-car__title"><p class="text">Launch of 2nd-gen FCEV, NEXO</p>
+                        </div>
                         <div class="slide-car__description ">
-                            <p class="text" *ngIf="eng">
+                            <p class="text">
                                 The NEXO Fuel Cell SUV delivers the
                                 world’s best fuel cell efficiency and
                                 a driving range of 666 km (WLTP).
@@ -552,10 +503,6 @@
                                 ratio, faster acceleration and cabin
                                 space.
                             </p>
-                            <p class="text" *ngIf="ar">بمدى قيادة يصل إلى 666 كم (WLTP) وأعلى كفاءة في استهلاك الوقود في
-                                العالم، تتربع نكسو الجديدة كلياً على عرش السيارات العاملة بخلايا الوقود دون منازع. تم
-                                تصميم السيارة منذ البداية لتكون الأكثر كفاءة بهندسة خاصة تحسن من نسبة القوة إلى الوزن
-                                ولتمتلك تسارعاً أكبر وتكون أكثر اتساعاً من الداخل.</p>
                         </div>
                     </div>
                 </div>
@@ -855,7 +802,8 @@
                 at the time of publication and subject to change without notice. Please visit your country homepage for
                 more
                 information."</p>
-            <p class="text" *ngIf="ar">قد تختلف الصور والمعلومات المذكورة أعلاه من منطقة إلى أخرى. تستند جميع المعلومات
+            <p class="text ar-light" *ngIf="ar">قد تختلف الصور والمعلومات المذكورة أعلاه من منطقة إلى أخرى. تستند جميع
+                المعلومات
                 والرسوم التوضيحية إلى البيانات المتاحة في وقت النشر وخاضعة للتغيير دون إشعار. يرجى زيارة الصفحة الرئيسية
                 لبلدك للمزيد من المعلومات.</p>
 

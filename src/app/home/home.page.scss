@@ -20,20 +20,28 @@
 
 @font-face {
   font-family: Ar-Bold; /* Имя шрифта */
-  src: url(fonts/HyundaiSansHeadOffice-Medium.ttf);
+  src: url(fonts/GESSTWOBold-Bold.otf);
 }
 
 @font-face {
   font-family: Ar-Medium; /* Имя шрифта */
-  src: url(fonts/HyundaiSansHeadOffice-Regular.ttf);
+  src: url(fonts/GE-SS-TWO-Medium.otf);
 }
 
 body, html {
   height: 100%;
 }
 
-[ion-fixed] {
-  height: 100%;
+.ar-med{
+  font-family: Ar-Medium;
+}
+
+.ar-light{
+  font-family: Ar-light;
+}
+
+.ar-bold{
+  font-family: Ar-Bold;
 }
 
 .text {

@@ -135,6 +135,7 @@ export class HomePage {
 
     sliderHistory = 20;
     sliderGallery = 20;
+    tapSecond = 5;
 
 
     constructor(public el: ElementRef,
@@ -142,6 +143,10 @@ export class HomePage {
                 private inch19: Inch19) {
         this.currentInch = inch19;
 
+    }
+
+    tapMouse() {
+        console.log('mouse');
     }
 
 
@@ -219,12 +224,12 @@ export class HomePage {
             this.heritage = true;
             this.table = false;
             this.footer = false;
-        } else if (position >= 3400 && position < 4400) {
+        } else if (position >= 3400 && position < 4000) {
             this.home = false;
             this.heritage = false;
             this.table = true;
             this.footer = false;
-        } else if (position >= 4400 && position < 7000) {
+        } else if (position >= 4000 && position < 7000) {
             this.home = false;
             this.heritage = false;
             this.table = false;
