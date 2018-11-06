@@ -37,6 +37,10 @@ body, html {
   margin-top: 0;
 }
 
+.ar-text{
+  padding-top: 1% !important;
+}
+
 .ar {
   text-align: right;
 }
@@ -396,7 +400,7 @@ body, html {
 }
 
 .car-four {
-  height: 110%;
+  height: 100%;
   background: url(img/block_4/highlight_slide_bg.png) no-repeat center;
   background-size: cover;
   margin-bottom: 5%;
@@ -435,7 +439,6 @@ body, html {
   display: -webkit-inline-box;
   overflow: -webkit-paged-y;
   width: 100%;
-  padding-top: 3%;
   padding-left: 6%;
 
   &__item-top {

@@ -116,9 +116,7 @@ export class HomePage {
         frontTires: '',
         rearTires: ''
     };
-    currentImage = '1.png';
 
-    fullScreen = false;
     eng = true;
     ar = false;
 
@@ -127,21 +125,27 @@ export class HomePage {
     table = false;
     footer = false;
 
+    lastPos = 0;
+    firstHeight = 85;
+
     @ViewChild(Slides) slides: Slides;
 
-    public basicSliderVal: number;
     sliderHistory = 20;
     sliderGallery = 20;
 
 
     constructor(public el: ElementRef,
                 private inch17: Inch17,
-                private inch19: Inch19,
-                private sanitizer: DomSanitizer,
-                private modalCtrl: ModalController) {
+                private inch19: Inch19) {
         this.currentInch = inch19;
+
     }
 
+
+    scrollToTop(pos) {
+        pos = pos - this.position;
+        this.content.scrollByPoint(0, pos, 200);
+    }
 
     arabian() {
         this.ar = true;
@@ -161,14 +165,6 @@ export class HomePage {
         this.carleft = '2';
     }
 
-    full() {
-        this.fullScreen = true;
-    }
-
-    closeFull() {
-        this.fullScreen = false;
-    }
-
     closeRight() {
         this.carRight = '1';
     }
@@ -177,29 +173,38 @@ export class HomePage {
         this.carleft = '1';
     }
 
-    expendAll() {
-        this.wheel = true;
-        this.dimension = true;
-        this.perfomance = true;
-    }
 
     onScroll(event) {
         console.log(event.detail.scrollTop);
+        this.position = event.detail.scrollTop;
         this.getActiveItemMenu(event.detail.scrollTop);
-        if (this.position > event.detail.scrollTop) {
-            let height = event.detail.scrollTop;
-            this.position = height;
-            height = height / 1000;
-            this.topCar = this.topCar - height;
-        } else if (this.position < event.detail.scrollTop) {
-            if (event.detail.scrollTop >= 0) {
+        if (this.lastPos > event.detail.scrollTop) {
+            this.lastPos = event.detail.scrollTop;
+            if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
                 let height = event.detail.scrollTop;
-                this.position = height;
-                height = height / 1000;
-                this.topCar = 57 + height;
+                height = height * 0.0016;
+                console.log(height);
+                this.firstHeight = 85;
+                this.topCar = this.topCar - height;
+                console.log('topCar' + this.topCar);
+                console.log('topCar' + this.firstHeight);
+            }
+        } else if (this.lastPos < event.detail.scrollTop) {
+            this.lastPos = event.detail.scrollTop;
+            if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
+                let height = event.detail.scrollTop;
+                height = height * 0.0016;
+                console.log(height);
+                this.firstHeight = 85 - height;
+                this.topCar = this.topCar + height;
+                console.log('topCar' + this.topCar);
+                console.log('topCar' + this.firstHeight);
             }
         }
     }
+
+    // 62,5 = 1px = 0.016vw;
+
 
     getActiveItemMenu(position) {
         if (position >= 0 && position < 1600) {
@@ -245,7 +250,7 @@ export class HomePage {
 
     getImage(image) {
         this.sliderGallery = 20 + (0.32 * image);
-        this.slides.slideTo(image, 500);
+        this.slides.slideTo(image - 1, 500);
     }
 
     selectInch17() {
@@ -274,11 +279,5 @@ export class HomePage {
     showPerfomace() {
         this.perfomance = !this.perfomance;
         console.log(this.perfomance);
-    }
-
-    scrollTo(className: string): void {
-        const elementList = document.querySelectorAll('.' + className);
-        const element = elementList[0] as HTMLElement;
-        element.scrollIntoView({behavior: 'smooth'});
     }
 }

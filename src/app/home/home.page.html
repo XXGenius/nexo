@@ -1,4 +1,4 @@
-<ion-header ion-fixed>
+<ion-header fixed style="z-index: 999">
     <ion-grid class="header" style="border-bottom: 1px solid #DFDFDF;padding: 0;">
         <ion-row>
             <ion-col align-self-center>
@@ -12,35 +12,35 @@
     </ion-grid>
     <ion-grid class="navbar" style="border-bottom: 1px solid #DFDFDF;">
         <ion-row>
-            <ion-col class="navbar__item" (click)="scrollTo('main')">
+            <ion-col class="navbar__item" (click)="scrollToTop(0)">
                 <div class="active" [ngClass]="{'active': home}">Home</div>
             </ion-col>
-            <ion-col class="navbar__item" (click)="scrollTo('delimeter')">
+            <ion-col class="navbar__item" (click)="scrollToTop(1836)">
                 <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}">Heritage
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollTo('delimeter.container')">
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3812)">
                 <div [ngClass]="{'active': table}">Specification</div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollTo('footer')">
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(4500)">
                 <div [ngClass]="{'active': footer}">Exterior&Interior</div>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-header>
 <ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
-    <div class="main">
+    <div class="main"  >
         <div class="block-text">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
             <p *ngIf="ar" style="margin: 0;">نكسو</p>
         </div>
         <div class="blok2"></div>
         <div class="blok3"></div>
-        <div class="blok1"></div>
+        <div class="blok1" ></div>
     </div>
     <div class="white">
         <div class="second">
-            <div class="arrow" (click)="scrollTo('second')">
+            <div class="arrow" (click)="scrollToTop(797)">
                 <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
             </div>
             <div class="second__item">
@@ -94,12 +94,18 @@
                     <img (click)="closeLeft()" style="height: 4vw;position: absolute;top: 3.5vw;left: 1.6vw;"
                          src="./assets/img/block_2/Close.png">
                     <div>
-                        <div class="car__title">Sleekly sculpted</div>
-                        <div class="car__text">The All-New NEXO’s sleek
-                            window line and floating roof
-                            design add to the streamlined
-                            look – expressive from
-                            every angle.
+                        <div class="car__title">
+                            <p class="text" *ngIf="eng">Sleekly sculpted</p>
+                            <p class="text" *ngIf="ar">خطوط منحوتة بعناية</p>
+                        </div>
+                        <div class="car__text">
+                            <p class="text" *ngIf="eng">The All-New NEXO’s sleek
+                                window line and floating roof
+                                design add to the streamlined
+                                look – expressive from
+                                every angle.</p>
+                            <p class="text" *ngIf="ar">بتصميمها الديناميكي وخطوط شبابيكها التي يرتقي فوقها السقف، سيسحرك
+                                تصميم نكسو الجديدة كلياً من كل الزوايا.</p>
                         </div>
                     </div>
                 </div>
@@ -107,11 +113,18 @@
                     <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 3.5vw;right: 1.6vw;"
                          src="./assets/img/block_2/Close.png" alt="">
                     <div>
-                        <div class="car__title-right">Pure form</div>
-                        <div class="car__text-right">NEXO’s clean, progressive design
-                            combines the very best of
-                            aerodynamics, technology, and SUV
-                            style into one impressively pure form.
+                        <div class="car__title-right">
+                            <p class="text" *ngIf="eng">Pure form</p>
+                            <p class="text" *ngIf="ar">مستقبلية بكل تفاصيلها</p></div>
+                        <div class="car__text-right">
+                            <p class="text" *ngIf="eng">NEXO’s clean,
+                                progressive design
+                                combines the very best of
+                                aerodynamics, technology, and SUV
+                                style into one impressively pure form.</p>
+                            <p class="text" *ngIf="ar">يجمع تصميم نكسو العصري الهندسة الأيروديناميكية والتكنولوجيا بأفضل
+                                ميزات
+                                السيارت متعددة الاستعمالات، ليمنح السيارة صيغة مستقبلية مميزة.</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +133,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="box arrow" (click)="scrollTo('delimeter')">
+        <div class="box arrow" (click)="scrollToTop(1830)">
             <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter"></div>
@@ -263,10 +276,10 @@
     </div>
     <div class="car-four">
         <div class="arrow">
-            <img (click)="scrollTo('slide-car')" class="arrow__img" src="./assets/img/arrow.png">
+            <img (click)="scrollToTop(2770)" class="arrow__img" src="./assets/img/arrow.png">
         </div>
         <div class="line-left"></div>
-        <div style="position: relative;height: 105vw;">
+        <div style="position: relative;height: 90vw;">
             <div class="slide-car" (scroll)="onScrollY($event)">
 
                 <div class="slide-car__item-top">
@@ -365,19 +378,27 @@
                     </div>
                 </div>
                 <div class="slide-car__item-top">
-                    <div class="slide-car__item-top bottom-image">
+                    <div class="slide-car__item-top bottom-image" [ngClass]="{'ar-text': ar}">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2007</div>
-                        <div class="slide-car__title">100kW Tucson FCEV</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">100kW Tucson FCEV</p>
+                            <p class="text" *ngIf="ar">سانتافيه العاملة بخلايا الوقود بقدرة 100 كيلوواط</p></div>
                         <div class="slide-car__description bottom">
-                            Further development of FCEV
-                            powertrain.
-                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <p class="text" *ngIf="eng">Further development of FCEV
+                                powertrain.</p>
+                            <p class="text" *ngIf="ar">إضافات وتطويرات جديدة لآلية الحركة العاملة بخلايا الوقود.</p>
+                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 370 km</li>
                                 <li> Fuel cell power output: 100 kW</li>
                                 <li>Note: Equipped with Hyundai's
                                     in-house developed
                                     electric drivetrain.
+                                </li>
+                            </ul>
+                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
+                                <li>مدى القيادة: 370 كم</li>
+                                <li>القدرة الكهربائية لخلية الوقود: 100 كيلوواط</li>
+                                <li>ملاحظة: مزودة بآلية دفع كهربائي في محلياً في هيونداي.
                                 </li>
                             </ul>
                         </div>
@@ -407,16 +428,25 @@
                     </div>
                 </div>
                 <div class="slide-car__item-top">
-                    <div class="slide-car__item-top bottom-image">
+                    <div class="slide-car__item-top bottom-image" [ngClass]="{'ar-text': ar}">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2013</div>
-                        <div class="slide-car__title">100kw ix35 FCEV</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">100kw ix35 FCEV</p>
+                            <p class="text" *ngIf="ar">سيارة ix35 العاملة بخلايا الوقود بقدرة 100 كيلوواط</p></div>
                         <div class="slide-car__description bottom">
-                            World’s 1st Mass- produced FCEV.
-                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <p class="text" *ngIf="eng"> World’s 1st Mass- produced FCEV.</p>
+                            <p class="text" *ngIf="ar">السيارة العاملة بخلايا الوقود الأولى في العالم اتي يتم تصنيعها
+                                على نظاق تجاري واسع.</p>
+                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 594 km (NEDC)</li>
                                 <li>
                                     Fuel cell power output: 100 kW.
+                                </li>
+                            </ul>
+                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
+                                <li>مدى القيادة: 594 كم.</li>
+                                <li>
+                                    القدرة الكهربائية لخلية الوقود: 100 كيلوواط.
                                 </li>
                             </ul>
                         </div>
@@ -446,15 +476,20 @@
                     <div class="slide-car__item-top">
                         <div class="delimeter-year-top"></div>
                         <div class="slide-car__year">2017</div>
-                        <div class="slide-car__title">The FE Concept</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">The FE Concept</p>
+                            <p class="text" *ngIf="ar">سيارة FE النموذجية</p></div>
                         <div class="slide-car__description bottom">
-                            The FE Concept showcases Hyundai
-                            Motor’s 4th generation hydrogen fuel
-                            cell technology, an evolution of
-                            research, development and real-world
-                            evaluation programs around the world.
-                            Supports the Icelandic
-                            H2ME Initiative.
+                            <p class="text" *ngIf="eng"> The FE Concept showcases Hyundai
+                                Motor’s 4th generation hydrogen fuel
+                                cell technology, an evolution of
+                                research, development and real-world
+                                evaluation programs around the world.
+                                Supports the Icelandic
+                                H2ME Initiative.</p>
+                            <p class="text " *ngIf="ar">تمثّل سيارة FE النموذجية الجيلَ الرابع من سيارات هيونداي العاملة
+                                بتكنولوجيا خلايا الوقود، وتعرض التطورات في الأبحاث والمستجدات في برامج التقييم حول
+                                العالم. هذا وتدعم السيارة النموذجية مبادرة النقل بالهيدروجين في أوروبا H2ME.</p>
+
                         </div>
                         <img style="padding-top:4vw;" src="./assets/img/block_4/9.png">
                     </div>
@@ -492,7 +527,7 @@
     </div>
     <div class="container table">
         <div class="arrow" style="    padding-bottom: 0;">
-            <img (click)="scrollTo('delimeter.container')" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            <img (click)="scrollToTop(3812)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter container"></div>
         <div class="specification">
@@ -777,7 +812,7 @@
     </div>
     <div class="footer">
         <div class="arrow">
-            <img (click)="scrollTo('footer')" class="arrow__img" src="../../assets/img/arrow.png" alt="">
+            <img (click)="scrollToTop(4512)" class="arrow__img" src="../../assets/img/arrow.png" alt="">
         </div>
         <ion-slides loop="true" zoom="true" style="background-color: black">
             <ion-slide zoom="true"
