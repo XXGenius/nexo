@@ -13,30 +13,38 @@
     <ion-grid class="navbar" style="border-bottom: 1px solid #DFDFDF;">
         <ion-row>
             <ion-col class="navbar__item" (click)="scrollToTop(0)">
-                <div class="active" [ngClass]="{'active': home}">Home</div>
-            </ion-col>
-            <ion-col class="navbar__item" (click)="scrollToTop(1836)">
-                <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}">Heritage
+                <div class="active" [ngClass]="{'active': home}">
+                    <p class="text" *ngIf="eng">Home</p>
+                    <p class="text"  *ngIf="ar">الصفحة الرئيسية</p>
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3812)">
-                <div [ngClass]="{'active': table}">Specification</div>
+            <ion-col class="navbar__item" (click)="scrollToTop(1836)">
+                <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}"><p class="text"
+                                                                                                       *ngIf="eng">
+                    Heritage</p>
+                    <p class="text" style="padding-left: 3vw" *ngIf="ar">إرثنا</p>
+                </div>
+            </ion-col>
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3608)">
+                <div [ngClass]="{'active': table}"><p class="text" *ngIf="eng">Specification</p>
+                    <p class="text" style="padding-left: 3vw" *ngIf="ar">المواصفات</p></div>
             </ion-col>
             <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(4500)">
-                <div [ngClass]="{'active': footer}">Exterior&Interior</div>
+                <div [ngClass]="{'active': footer}"><p class="text" *ngIf="eng">Exterior&Interior</p>
+                    <p class="text" *ngIf="ar">التصميم الخارجي والداخلي</p></div>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-header>
-<ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)">
-    <div class="main"  >
+<ion-content [scrollEvents]="true " (ionScroll)="onScroll($event)" style="padding: 0; margin: 0">
+    <div class="main" [style.height.%]="firstHeight" ion-fixed>
         <div class="block-text">
             <p *ngIf="eng" style="margin: 0">NEXO</p>
             <p *ngIf="ar" style="margin: 0;">نكسو</p>
         </div>
-        <div class="blok2"></div>
+        <div class="blok2" [style.left.vw]="'-' + scyFirst"></div>
         <div class="blok3"></div>
-        <div class="blok1" ></div>
+        <div class="blok1" [style.bottom.vw]="topCar"></div>
     </div>
     <div class="white">
         <div class="second">
@@ -91,7 +99,7 @@
                     </ion-row>
                 </ion-grid>
                 <div [@carLeft]="carleft" class="second__left-car">
-                    <img (click)="closeLeft()" style="height: 4vw;position: absolute;top: 3.5vw;left: 1.6vw;"
+                    <img (click)="closeLeft()" style="height: 4vw;position: absolute;top: 1.5vw;left: 1.6vw;"
                          src="./assets/img/block_2/Close.png">
                     <div>
                         <div class="car__title">
@@ -110,7 +118,7 @@
                     </div>
                 </div>
                 <div [@carRight]="carRight" class="second__right-car">
-                    <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 3.5vw;right: 1.6vw;"
+                    <img (click)="closeRight()" style="height: 4vw;position: absolute;top: 1.5vw;right: 1.6vw;"
                          src="./assets/img/block_2/Close.png" alt="">
                     <div>
                         <div class="car__title-right">
@@ -175,13 +183,16 @@
         <ion-grid style="padding-top: 5.5vw;padding-bottom: 1.1vw;">
             <ion-row>
                 <ion-col align-self-center>
-                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/first.png" alt=""></div>
+                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                             src="./assets/img/block_3/first.png" alt=""></div>
                 </ion-col>
                 <ion-col align-self-center>
-                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/second.png" alt=""></div>
+                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                             src="./assets/img/block_3/second.png" alt=""></div>
                 </ion-col>
                 <ion-col align-self-center>
-                    <div class="center"><img class="heritage__img" src="./assets/img/block_3/third.png" alt=""></div>
+                    <div class="center"><img style="padding-right: 2vw;" class="heritage__img"
+                                             src="./assets/img/block_3/third.png" alt=""></div>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -272,7 +283,7 @@
         </ion-grid>
 
     </div>
-    <div class="car-third">
+    <div class="car-third" [style.height.%]="thirdCar">
     </div>
     <div class="car-four">
         <div class="arrow">
@@ -361,12 +372,24 @@
                         <img class="top-image" src="./assets/img/block_4/4.png">
                         <div class="slide-car__year top">2006</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title">1st Generation fuel cell bus</div>
-                        <div class="slide-car__description ">Hyundai has been operating an
-                            FCEV demonstration program in
-                            collaboration with the Korean
-                            government since 2006.
-                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">1st Generation fuel cell bus</p>
+                            <p class="text" *ngIf="ar">الجيل الأول من الحافلات العاملة بخلايا الوقود</p></div>
+                        <div class="slide-car__description ">
+                            <p class="text" *ngIf="eng">Hyundai has been operating an
+                                FCEV demonstration program in
+                                collaboration with the Korean
+                                government since 2006.</p>
+                            <p class="text" *ngIf="ar">
+                                بدأت هيونداي منذ العام 2006 بتشغيل برنامج توضيحي للمركبات العاملة بخلايا الوقود بالتعاون
+                                مع الحكومة الكورية.
+                            </p>
+                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
+                                <li> مدى القيادة للحافلة: 380 كم</li>
+                                <li>القدرة الكهربائية لخلية الوقود: 160 كيلوواط</li>
+                                <li>ملاحظة: تم تشغيل هذه الحافلة واستخدامها في ألمانيا خلال دورة كأس العالم 2006.
+                                </li>
+                            </ul>
+                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li> Bus operating range: 380 km</li>
                                 <li> Fuel cell power output: 160 kW</li>
                                 <li>Note: Operated in Germany during
@@ -410,18 +433,28 @@
                         <img class="top-image" src="./assets/img/block_4/6.png">
                         <div class="slide-car__year top">2009</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title">2nd Generation fuel cell bus</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">2nd Generation fuel cell bus</p>
+                            <p class="text" *ngIf="ar">الجيل الثاني من الحافلات العاملة بخلايا الوقود </p></div>
                         <div class="slide-car__description ">
-                            The FCEV demonstration program was
-                            launched in 2009 in Korea, in Seoul
-                            and Ulsan and was successfully
-                            completed in 2013.
-                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <p class="text" *ngIf="eng">The FCEV demonstration program was
+                                launched in 2009 in Korea, in Seoul
+                                and Ulsan and was successfully
+                                completed in 2013.</p>
+                            <p class="text" *ngIf="ar">تم إطلاق البرنامج التوضيحي للمركبات العاملة بخلايا الوقود في
+                                مدينتي سيؤول وأولسان في كوريا عام 2009، وانتهى بنجاح في عام 2013</p>
+                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li> Operating range: 380 km</li>
                                 <li>Fuel cell power output: 200 kW</li>
                                 <li>
                                     Note: Operated in Korea during the
                                     Yeosu Expo 2012.
+                                </li>
+                            </ul>
+                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
+                                <li> مدى القيادة للحافلة: 380 كم</li>
+                                <li>القدرة الكهربائية لخلية الوقود: 200 كيلوواط</li>
+                                <li>
+                                    ملاحظة: تم تشغيل هذه الحافلة واستخدامها في كوريا خلال معرض يوسو عام 2012.
                                 </li>
                             </ul>
                         </div>
@@ -458,16 +491,23 @@
                         <img class="top-image" src="./assets/img/block_4/8.png">
                         <div class="slide-car__year top">2015</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title">Intrado fuel cell concept</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">Intrado fuel cell concept</p>
+                            <p class="text" *ngIf="ar">سيارة إنترادو النموذجية العاملة بخلايا الوقود </p></div>
                         <div class="slide-car__description ">
-                            The Hyundai Intrado concept car
-                            premiered at the 2014 Geneva
-                            Motor Show. The SUV/crossover has
-                            a
-                            carbon-fibre central structure and
-                            utilises a Li-ion 36 kW battery.
-                            <ul style="padding: 1vw 0 0 2vw;margin: 0;">
+                            <p class="text" *ngIf="eng">The Hyundai Intrado concept car
+                                premiered at the 2014 Geneva
+                                Motor Show. The SUV/crossover has
+                                a
+                                carbon-fibre central structure and
+                                utilises a Li-ion 36 kW battery.</p>
+                            <p class="text" *ngIf="ar">تم عرض سيارة إنترادو النموذجية لأول مرة في معرض جنيف الدولي
+                                للسيارات عام 2014. وتتميز هذه السيارة ببنيتها المركزية المصنوعة من نسيج الكربون
+                                وبطاريتها من نوع Li-ion بقدرة 36 كيلو واط. </p>
+                            <ul *ngIf="eng" style="padding: 1vw 0 0 2vw;margin: 0;">
                                 <li>Operating range: 600 km.</li>
+                            </ul>
+                            <ul *ngIf="ar" style="padding: 1vw 0 0 2vw;margin: 0;">
+                                <li>مدى القيادة: 600 كم.</li>
                             </ul>
                         </div>
                     </div>
@@ -499,9 +539,11 @@
                         <img class="top-image" src="./assets/img/block_4/10.png">
                         <div class="slide-car__year top">2018</div>
                         <div class="delimeter-year-bottom"></div>
-                        <div class="slide-car__title">Launch of 2nd-gen FCEV, NEXO</div>
+                        <div class="slide-car__title"><p class="text" *ngIf="eng">Launch of 2nd-gen FCEV, NEXO</p>
+                            <p class="text" *ngIf="ar">إطلاق الجيل الثاني من سيارات هيونداي العاملة بخلايا الوقود،
+                                نكسو</p></div>
                         <div class="slide-car__description ">
-                            <p>
+                            <p class="text" *ngIf="eng">
                                 The NEXO Fuel Cell SUV delivers the
                                 world’s best fuel cell efficiency and
                                 a driving range of 666 km (WLTP).
@@ -510,7 +552,10 @@
                                 ratio, faster acceleration and cabin
                                 space.
                             </p>
-
+                            <p class="text" *ngIf="ar">بمدى قيادة يصل إلى 666 كم (WLTP) وأعلى كفاءة في استهلاك الوقود في
+                                العالم، تتربع نكسو الجديدة كلياً على عرش السيارات العاملة بخلايا الوقود دون منازع. تم
+                                تصميم السيارة منذ البداية لتكون الأكثر كفاءة بهندسة خاصة تحسن من نسبة القوة إلى الوزن
+                                ولتمتلك تسارعاً أكبر وتكون أكثر اتساعاً من الداخل.</p>
                         </div>
                     </div>
                 </div>
@@ -527,7 +572,7 @@
     </div>
     <div class="container table">
         <div class="arrow" style="    padding-bottom: 0;">
-            <img (click)="scrollToTop(3812)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            <img (click)="scrollToTop(3608)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter container"></div>
         <div class="specification">
@@ -555,7 +600,7 @@
     top: 0;
     width: 4vw;"><img style="max-width: 30%;
     margin-bottom: -0.7vw;
-    margin-left: 1.3vw;" src="./assets/img/arrows.png" alt=""></div>
+    margin-left: 1.5vw;" src="./assets/img/arrows.png" alt=""></div>
                     <div class="option-list" [style.display]="select?'block':'none'">
                         <div class="option" data-select-val="0" (click)="selectInch17()">FCEV powertrain (17-inch
                             wheels)
@@ -804,10 +849,16 @@
         </div>
         <div class="message">
             <img src="./assets/img/icon_message.png" alt="">
-            "Images and information posted on the above may differ from region to region. All information and
-            illustrations are based on data available
-            at the time of publication and subject to change without notice. Please visit your country homepage for more
-            information."
+            <p class="text" *ngIf="eng"> "Images and information posted on the above may differ from region to region.
+                All information and
+                illustrations are based on data available
+                at the time of publication and subject to change without notice. Please visit your country homepage for
+                more
+                information."</p>
+            <p class="text" *ngIf="ar">قد تختلف الصور والمعلومات المذكورة أعلاه من منطقة إلى أخرى. تستند جميع المعلومات
+                والرسوم التوضيحية إلى البيانات المتاحة في وقت النشر وخاضعة للتغيير دون إشعار. يرجى زيارة الصفحة الرئيسية
+                لبلدك للمزيد من المعلومات.</p>
+
         </div>
     </div>
     <div class="footer">

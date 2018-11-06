@@ -101,6 +101,8 @@ export class HomePage {
     content: Content;
     position = 0;
     topCar = 57;
+    scyFirst = 5;
+    firstHeight = 83;
     carleft = '1';
     carRight = '1';
     url: any;
@@ -126,7 +128,8 @@ export class HomePage {
     footer = false;
 
     lastPos = 0;
-    firstHeight = 85;
+
+    thirdCar = 1;
 
     @ViewChild(Slides) slides: Slides;
 
@@ -178,29 +181,28 @@ export class HomePage {
         console.log(event.detail.scrollTop);
         this.position = event.detail.scrollTop;
         this.getActiveItemMenu(event.detail.scrollTop);
-        if (this.lastPos > event.detail.scrollTop) {
+        if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
+            const raz = event.detail.scrollTop - this.lastPos;
             this.lastPos = event.detail.scrollTop;
-            if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
-                let height = event.detail.scrollTop;
-                height = height * 0.0016;
-                console.log(height);
-                this.firstHeight = 85;
-                this.topCar = this.topCar - height;
-                console.log('topCar' + this.topCar);
-                console.log('topCar' + this.firstHeight);
-            }
-        } else if (this.lastPos < event.detail.scrollTop) {
-            this.lastPos = event.detail.scrollTop;
-            if (event.detail.scrollTop >= 0 && event.detail.scrollTop <= 500) {
-                let height = event.detail.scrollTop;
-                height = height * 0.0016;
-                console.log(height);
-                this.firstHeight = 85 - height;
-                this.topCar = this.topCar + height;
-                console.log('topCar' + this.topCar);
-                console.log('topCar' + this.firstHeight);
-            }
+            let height = event.detail.scrollTop;
+            height = raz * 0.030;
+            console.log(height);
+            this.scyFirst = this.scyFirst + height;
+            this.firstHeight = this.firstHeight - height;
+            this.topCar = this.topCar + height;
+            console.log('topCar' + this.topCar);
+            console.log('topCar' + this.firstHeight);
         }
+        // } else if (event.detail.scrollTop > 500 && event.detail.scrollTop < 1500) {
+        //     this.lastPos = event.detail.scrollTop;
+        // } else if (event.detail.scrollTop >= 1500 && event.detail.scrollTop <= 1700) {
+        //     const raz = event.detail.scrollTop - this.lastPos;
+        //     this.lastPos = event.detail.scrollTop;
+        //     const height = raz * 0.030;
+        //     console.log(height);
+        //     this.thirdCar = this.thirdCar + height;
+        // }
+
     }
 
     // 62,5 = 1px = 0.016vw;
