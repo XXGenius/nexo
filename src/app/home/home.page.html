@@ -18,18 +18,18 @@
                     <p class="text ar-med" *ngIf="ar">الصفحة الرئيسية</p>
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" (click)="scrollToTop(1543)">
+            <ion-col class="navbar__item" (click)="scrollToTop(1129)">
                 <div style="text-align: left;padding-left: 3.5vw;" [ngClass]="{'active': heritage}"><p class="text"
                                                                                                        *ngIf="eng">
                     Heritage</p>
                     <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">إرثنا</p>
                 </div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3534)">
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(3150)">
                 <div [ngClass]="{'active': table}"><p class="text" *ngIf="eng">Specification</p>
                     <p class="text ar-med" style="padding-left: 3vw" *ngIf="ar">المواصفات</p></div>
             </ion-col>
-            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(4500)">
+            <ion-col class="navbar__item" style="text-align: left" (click)="scrollToTop(4029)">
                 <div [ngClass]="{'active': footer}"><p class="text" *ngIf="eng">Exterior&Interior</p>
                     <p class="text ar-med" *ngIf="ar">التصميم الخارجي والداخلي</p></div>
             </ion-col>
@@ -49,11 +49,19 @@
     <div class="second-block">
         <div class="white" [style.bottom.vw]="secondBottom">
 
-            <div class="second" [style.magin.%]="tapSecond" (mouseup)="tapMouse()">
-                <div class="arrow" (click)="scrollToTop(512)">
+            <div class="second" [style.magin.%]="tapSecond" (touchstart)="tapMouse()" (touchend)="tapMouse()">
+                <div class="arrow" style="position: relative;
+    z-index: 50;
+    right: 22vw;
+    bottom: 3vw;" (click)="scrollToTop(512)">
                     <img class="arrow__img" src="../../assets/img/arrow.png" alt="">
                 </div>
-                <div class="second__item">
+                <div class="white-line-left" [@openClose]="isOpen ? 'open' : 'closed'"></div>
+                <div class="white-line-right" [@openClose]="isOpen ? 'open' : 'closed'"></div>
+                <div class="blok5" [style.left.vw]="'-' + scySecond"></div>
+                <div class="blok6"></div>
+                <div class="blok4" [style.bottom.vw]="carBottom"></div>
+                <div class="second__item" [style.bottom.vw]="carBlockTop">
                     <div class="second__title">
                         <p *ngIf="ar" class="ar-med" style="margin: 0;">الطريق نحو مستقبل أفضل
                         </p>
@@ -70,7 +78,7 @@
 
                         </div>
                     </div>
-                    <ion-grid class="second__block">
+                    <ion-grid class="second__block" >
                         <ion-row>
                             <ion-col>
                                 <div>
@@ -151,8 +159,9 @@
         </div>
     </div>
     <div class="third-block">
-        <div class="container">
-            <div class="box arrow" (click)="scrollToTop(1543)">
+        <div class="container" [style.bottom.vw]="thirdBlockBottom">
+
+            <div class="box arrow" (click)="scrollToTop(1129)">
                 <img class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
             </div>
             <div class="delimeter"></div>
@@ -305,18 +314,18 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+            <div class="car-third" [style.height.%]="thirdCar">
+            </div>
+        </div>
 
-        </div>
-        <div class="car-third" [style.height.%]="thirdCar">
-        </div>
     </div>
 
     <div class="car-four">
         <div class="arrow">
-            <img (click)="scrollToTop(2495)" class="arrow__img" src="./assets/img/arrow.png">
+            <img (click)="scrollToTop(2113)" class="arrow__img" src="./assets/img/arrow.png">
         </div>
         <div class="line-left"></div>
-        <div style="position: relative;height: 95vw;" [style.padding-left.%]="sliderCarPadding">
+        <div style="position: relative;height: 95vw;" [@slider]="slideStart ? 'open' : 'closed'">
             <div class="slide-car" (scroll)="onScrollY($event)">
 
                 <div class="slide-car__item-top">
@@ -527,9 +536,9 @@
             </div>
         </div>
         <div class="center">
-            <div class="bar">
+            <div class="bar" style="padding-top: 0">
                 <div class="bar__line"></div>
-                <div class="bar__arrows" [style.left]="sliderHistory + 'vw'"><img class="bar__img"
+                <div class="bar__arrows" style="    top: -2vw;" [style.left]="sliderHistory + 'vw'"><img class="bar__img"
                                                                                   src="./assets/img/polz.png" alt="">
                 </div>
             </div>
@@ -537,7 +546,7 @@
     </div>
     <div class="container-mar table">
         <div class="arrow" style="    padding-bottom: 0;">
-            <img (click)="scrollToTop(3534)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
+            <img (click)="scrollToTop(3150)" class="arrow__img" src="../../assets/img/arrow-b.png" alt="">
         </div>
         <div class="delimeter container-mar"></div>
         <div class="specification">
@@ -828,17 +837,19 @@
         </div>
     </div>
     <div class="footer">
+        <div class="footer__back"></div>
         <div class="arrow">
-            <img (click)="scrollToTop(4512)" class="arrow__img" src="../../assets/img/arrow.png" alt="">
+            <img (click)="scrollToTop(4029)" class="arrow__img" src="../../assets/img/arrow.png" alt="">
         </div>
-        <ion-slides loop="true" zoom="true" style="background-color: black">
+        <ion-slides loop="true" zoom="true" (ionSlideDidChange)="slideChanged()" style="background-color: black">
             <ion-slide zoom="true"
                        *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]">
                 <img data-src="./assets/img/slide/{{image}}.jpg">
             </ion-slide>
         </ion-slides>
-        <div style="height: 20%">
-            <div class="footer__slider" (scroll)="onScrollGallery($event)">
+        <div style="height: 20%;    z-index: 10;
+    position: relative;">
+            <div class="footer__slider" #widgetsContent  (scroll)="onScrollGallery($event)">
                 <div class="footer__slider-item"
                      *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]"
                      (click)="getImage(image)">

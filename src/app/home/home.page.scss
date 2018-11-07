@@ -72,35 +72,37 @@ body, html {
 }
 
 .blok4 {
-  height: 45vw;
+  height: 52vw;
   z-index: 9;
-  width: 108vw;
-  bottom: 57vw;
+  width: 100%;
+  bottom: 42vw;
+  right: 20vw;
   background: url(img/block_2/4.png) no-repeat center;
   background-size: cover;
   position: relative;
 }
 
 .blok6 {
-  height: 67vw;
+  height: 26vw;
   z-index: 1;
-  width: 141vw;
-  left: -5vw;
-  top: 0;
+  width: 113vw;
+  left: -13vw;
   background: url(img/block_2/6.png) no-repeat center;
   background-size: cover;
   position: relative;
+  bottom: 19vw;
 }
+
 .blok5 {
-   height: 67vw;
-   z-index: 1;
-   width: 141vw;
-   left: -5vw;
-   top: 0;
-   background: url(img/block_2/5.png) no-repeat center;
-   background-size: cover;
-   position: relative;
- }
+  height: 70vw;
+  z-index: 1;
+  width: 147vw;
+  left: -16vw;
+  top: -17vw;
+  background: url(img/block_2/5.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
 
 .blok3 {
   height: 16vw;
@@ -175,7 +177,6 @@ body, html {
   position: relative;
 }
 
-
 .arrow {
   display: flex;
   align-items: center;
@@ -203,9 +204,31 @@ body, html {
 }
 
 .container {
-  margin: 5%;
+  background: white;
   position: absolute;
   bottom: 29vw;
+  padding: 5%;
+  z-index: 40;
+}
+
+.white-line-right{
+  position: absolute;
+  background: white;
+  width: 4%;
+  height: 110%;
+  right: 39vw;
+  z-index: 50;
+  top: -5vw;
+}
+
+.white-line-left{
+  position: absolute;
+  background: white;
+  width: 4%;
+  height: 110%;
+  left: -8vw;
+  z-index: 50;
+  top: -5vw;
 }
 
 .header {
@@ -305,13 +328,19 @@ body, html {
   margin: 5%;
   z-index: 20;
   height: 100%;
-  background: url(img/highlight_bg.jpg) no-repeat center;
-  background-size: cover;
+
+  &__item {
+    position: relative;
+    bottom: 152vw;
+    z-index: 30;
+    width: 90vw;
+    right: 2vw;
+  }
 
   &__left-car {
     position: absolute;
     height: 24vw;
-    top: 27vw;
+    top: 14vw;
     z-index: 31;
     width: 80vw;
     left: 5vw;
@@ -322,7 +351,7 @@ body, html {
   &__right-car {
     position: absolute;
     height: 24vw;
-    top: 27vw;
+    top: 14vw;
     z-index: 31;
     width: 80vw;
     left: 5vw;
@@ -449,7 +478,7 @@ body, html {
   background: url(img/block_3/hw124329.jpg) no-repeat center;
   background-size: cover;
   position: absolute;
-  top: 77vw;
+  top: 110vw;
   width: 100%;
 }
 
@@ -459,6 +488,8 @@ body, html {
   background-size: cover;
   margin-bottom: 5%;
   margin-top: 5%;
+  bottom: 50vw;
+  position: relative;
 }
 
 .top-image {
@@ -482,10 +513,10 @@ body, html {
 
 .line-left {
   position: absolute;
-  height: 100%;
+  height: 110%;
   width: 5%;
   left: 0;
-  top: 0;
+  top: -1vw;
   background: white;
 }
 
@@ -540,6 +571,8 @@ body, html {
 
 .table {
   background: #F7F7F7;
+  position: relative;
+  bottom: 50vw;
 }
 
 .specification {
@@ -704,7 +737,18 @@ table th {
 
 .footer {
   background: #232323;
-  height: 100%;
+  height: 57%;
+  position: relative;
+  bottom: 50vw;
+
+  &__back{
+    position: absolute;
+    bottom: -50vw;
+    background: #232323;
+    width: 100%;
+    height: 81%;
+    z-index: 0;
+  }
 
   &__title {
     text-align: center;
@@ -801,7 +845,7 @@ table th {
   position: relative;
   width: 100%;
   padding-left: 20%;
-  padding-top: 4vw;
+  padding-top: 15vw;
   padding-right: 20%;
 
   &__line {
@@ -811,7 +855,7 @@ table th {
 
   &__arrows {
     position: absolute;
-    top: 2vw;
+    top: 13vw;
   }
 
   &__img {

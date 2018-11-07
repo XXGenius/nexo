@@ -4,6 +4,7 @@ import {Content, ModalController, Slides} from '@ionic/angular';
 import {Inch17} from './17-inch';
 import {Inch19} from './19-inch';
 import {DomSanitizer} from '@angular/platform-browser';
+import {isNumber} from 'util';
 
 
 @Component({
@@ -37,51 +38,35 @@ import {DomSanitizer} from '@angular/platform-browser';
             transition('1 => 2', animate('500ms ease-out')),
             transition('2 => 1', animate('500ms ease-in'))
         ]),
-        trigger('car', [
-            state('1', style({})),
-            state('2', style({
-                bottom: '70vw'
+        trigger('openClose', [
+            // ...
+            state('open', style({
+                width: '4%'
             })),
-            state('3', style({
-                bottom: '80vw'
+            state('closed', style({
+                width: '0%'
             })),
-            transition('1 => 2', animate('700ms ease-out')),
-            transition('2 => 3', animate('700ms ease-out')),
-            transition('3 => 2', animate('700ms ease-in')),
-            transition('2 => 1', animate('700ms ease-in'))
+            transition('open => closed', [
+                animate('0.3s')
+            ]),
+            transition('closed => open', [
+                animate('0.4s')
+            ]),
         ]),
-        trigger('secondBlock', [
-            state('1', style({
-                height: '80%'
+        trigger('slider', [
+            // ...
+            state('open', style({
+                'padding-left': '5%'
             })),
-            state('2', style({
-                height: '70%'
+            state('closed', style({
+                'padding-left': '50%'
             })),
-            state('3', style({
-                height: '62%'
-            })),
-            state('4', style({
-                height: '45%'
-            })),
-            transition('1 => 2', animate('900ms ease-out')),
-            transition('2 => 3', animate('900ms ease-out')),
-            transition('3 => 4', animate('900ms ease-out')),
-            transition('4 => 3', animate('900ms ease-in')),
-            transition('3 => 2', animate('900ms ease-in')),
-            transition('2 => 1', animate('900ms ease-in'))
-        ]),
-        trigger('scy', [
-            state('1', style({})),
-            state('2', style({
-                left: '-55px'
-            })),
-            state('3', style({
-                left: '-100px'
-            })),
-            transition('1 => 2', animate('700ms ease-out')),
-            transition('2 => 3', animate('700ms ease-out')),
-            transition('3 => 2', animate('700ms ease-in')),
-            transition('2 => 1', animate('700ms ease-in'))
+            transition('open => closed', [
+                animate('0.5s')
+            ]),
+            transition('closed => open', [
+                animate('0.5s')
+            ]),
         ])
     ]
 })
@@ -117,6 +102,8 @@ export class HomePage {
         rearTires: ''
     };
 
+    isOpen = true;
+
     eng = true;
     ar = false;
 
@@ -128,6 +115,9 @@ export class HomePage {
     lastPos = 0;
 
     thirdCar = 1;
+    slideStart = false;
+
+    fullScreen = 1;
 
     @ViewChild(Slides) slides: Slides;
 
@@ -142,6 +132,14 @@ export class HomePage {
     sliderCarPadding = 50;
     secondBottom = 0;
 
+    scySecond = 13;
+    carBlockTop = 152;
+    carBottom = 42;
+
+    thirdBlockBottom = 29;
+
+    @ViewChild('widgetsContent', {read: ElementRef}) public widgetsContent: ElementRef<any>;
+
     constructor(public el: ElementRef,
                 private inch17: Inch17,
                 private inch19: Inch19) {
@@ -150,7 +148,7 @@ export class HomePage {
     }
 
     tapMouse() {
-        console.log('mouse');
+        this.isOpen = !this.isOpen;
     }
 
 
@@ -190,42 +188,77 @@ export class HomePage {
         console.log(event.detail.scrollTop);
         this.position = event.detail.scrollTop;
         const raz = event.detail.scrollTop - this.lastPos;
+        const height = raz * 0.030;
         this.lastPos = event.detail.scrollTop;
         this.getActiveItemMenu(event.detail.scrollTop);
         if (event.detail.scrollTop > 0 && event.detail.scrollTop <= 133) {
-            const height = raz * 0.030;
             this.nexoTop = this.nexoTop + height * 4;
             this.scyFirst = this.scyFirst + height;
             this.secondBottom = this.secondBottom + height * 5;
             this.topCar = this.topCar + height;
         } else if (event.detail.scrollTop >= 133 && event.detail.scrollTop <= 255) {
-            const height = raz * 0.030;
             if (event.detail.scrollTop >= 133 && event.detail.scrollTop <= 177) {
                 this.nexoTop = this.nexoTop + height * 4;
                 this.scyFirst = this.scyFirst + height;
             }
             this.secondBottom = this.secondBottom + height * 5;
-        } else if (event.detail.scrollTop >= 1358 && event.detail.scrollTop <= 2000) {
-            this.thirdCar = this.thirdCar + raz / 25;
-        } else if (event.detail.scrollTop >= 2000) {
-            this.thirdCar = 26;
+        } else if (event.detail.scrollTop >= 583 && event.detail.scrollTop <= 1000) {
+            if (event.detail.scrollTop <= 703) {
+                this.carBlockTop = this.carBlockTop - height * 3.8;
+                this.scySecond = this.scySecond + height * 2;
+                this.carBottom = this.carBottom + height;
+                this.thirdBlockBottom = this.thirdBlockBottom + height * 3;
+            } else if (event.detail.scrollTop > 703) {
+                this.carBlockTop = 138.662;
+                this.carBottom = 45;
+                this.scySecond = 19;
+                this.thirdBlockBottom = this.thirdBlockBottom + height * 5;
+            }
+        } else if (event.detail.scrollTop > 1000) {
+            this.thirdBlockBottom = 83;
+            this.carBlockTop = 138.662;
+            this.carBottom = 45;
+            this.scySecond = 19;
+            if (event.detail.scrollTop >= 1131 && event.detail.scrollTop <= 1750) {
+                this.thirdCar = this.thirdCar + raz / 25;
+            } else if (event.detail.scrollTop >= 1750 && event.detail.scrollTop < 2500) {
+                this.thirdCar = 26;
+                this.slideStart = true;
+            } else if (event.detail.scrollTop >= 2500) {
+                this.thirdCar = 26;
+                this.slideStart = false;
+            }
         } else if (event.detail.scrollTop > 500) {
-            this.sliderCarPadding = 5;
-            this.nexoTop = 27.52;
-            this.scyFirst = -10;
-            this.topCar = 62;
-            this.secondBottom = 37;
-            this.thirdCar = 1;
+            this.postDefault();
         } else if (event.detail.scrollTop < 3) {
-            this.sliderCarPadding = 5;
-            this.nexoTop = 7;
-            this.scyFirst = -4;
-            this.topCar = 57;
-            this.secondBottom = 0;
-            this.thirdCar = 1;
+            this.defaultValue();
         } else if (event.detail.scrollTop >= 2000) {
             this.thirdCar = 26;
         }
+    }
+
+
+    postDefault() {
+        this.sliderCarPadding = 50;
+        this.nexoTop = 27.52;
+        this.scyFirst = -10;
+        this.topCar = 62;
+        this.secondBottom = 37;
+        this.thirdCar = 1;
+    }
+
+
+    defaultValue() {
+        this.slideStart = false;
+        this.nexoTop = 7;
+        this.scyFirst = -4;
+        this.topCar = 57;
+        this.secondBottom = 0;
+        this.thirdCar = 1;
+        this.scySecond = 13;
+        this.carBlockTop = 152;
+        this.carBottom = 42;
+        this.thirdBlockBottom = 29;
     }
 
     // 1358
@@ -233,27 +266,34 @@ export class HomePage {
 
 
     getActiveItemMenu(position) {
-        if (position >= 0 && position < 1406) {
+        if (position >= 0 && position < 1129) {
             this.home = true;
             this.heritage = false;
             this.table = false;
             this.footer = false;
-        } else if (position >= 1406 && position < 3400) {
+        } else if (position >= 1129 && position < 3150) {
             this.home = false;
             this.heritage = true;
             this.table = false;
             this.footer = false;
-        } else if (position >= 3400 && position < 4000) {
+        } else if (position >= 3150 && position < 4000) {
             this.home = false;
             this.heritage = false;
             this.table = true;
             this.footer = false;
-        } else if (position >= 4000 && position < 7000) {
+        } else if (position >= 3900 && position < 7000) {
             this.home = false;
             this.heritage = false;
             this.table = false;
             this.footer = true;
         }
+    }
+
+    slideChanged() {
+        return this.slides.getActiveIndex().then((data) => {
+            console.log(data);
+            this.widgetsContent.nativeElement.scrollTo({left: (data * 224), behavior: 'smooth'});
+        });
     }
 
     @HostListener('scroll', ['$event'])
