@@ -291,7 +291,6 @@ export class HomePage {
 
     slideChanged() {
         return this.slides.getActiveIndex().then((data) => {
-            console.log(data);
             this.widgetsContent.nativeElement.scrollTo({left: (data * 224), behavior: 'smooth'});
         });
     }
